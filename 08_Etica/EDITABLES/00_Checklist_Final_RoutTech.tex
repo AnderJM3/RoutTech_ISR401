@@ -1,0 +1,198 @@
+\documentclass[10pt,a4paper]{article}
+
+% ============================================================
+% 00 - CHECKLIST FINAL DEL PAQUETE ETICO ROUTTECH
+% Documento autocontenido y compatible con pdfLaTeX en Overleaf.
+% ============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,top=1.75cm,bottom=1.65cm,left=1.75cm,right=1.75cm,headheight=20pt]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx,array,booktabs,colortbl}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{tikz}
+\usepackage{ragged2e}
+
+% ---------- PALETA ROUTTECH ----------
+\definecolor{RTForest}{HTML}{25463B}
+\definecolor{RTTerracotta}{HTML}{B45F45}
+\definecolor{RTGold}{HTML}{D5A64A}
+\definecolor{RTCream}{HTML}{F7F2E8}
+\definecolor{RTLight}{HTML}{EEF3F0}
+\definecolor{RTGray}{HTML}{4D5652}
+\definecolor{RTGreen}{HTML}{3F7D5A}
+\definecolor{RTAmber}{HTML}{9C6B18}
+
+% ---------- DATOS ----------
+\newcommand{\Proyecto}{RoutTech: Sistema de Movilidad Colaborativa para la Comunidad Universitaria de la UTEQ}
+\newcommand{\Asignatura}{ISR-401 -- Ingeniería de Requisitos}
+\newcommand{\Periodo}{2026--2027 PPA}
+\newcommand{\CategoriaEtica}{Categoría B -- Datos personales}
+\newcommand{\Repositorio}{https://github.com/AnderJM3/RoutTech_ISR401}
+\newcommand{\FechaDocumento}{30 de julio de 2026}
+\newcommand{\VersionDocumento}{2.0}
+\newcommand{\Paralelo}{Cuarto nivel -- Software B}
+
+% ---------- ESTADOS ----------
+\newcommand{\EstadoListo}{\textcolor{RTGreen}{\textbf{\scriptsize LISTO}}}
+\newcommand{\EstadoFirma}{\textcolor{RTTerracotta}{\textbf{\scriptsize FIRMA}}}
+\newcommand{\EstadoEvidencia}{\textcolor{RTAmber}{\textbf{\scriptsize EVIDENCIA}}}
+\newcommand{\EstadoExterno}{\textcolor{RTGray}{\textbf{\scriptsize EXTERNO}}}
+\newcommand{\RTCheckBox}{\tikz[baseline=-0.55ex]\draw[line width=0.55pt,rounded corners=0.3pt] (0,0) rectangle (0.26,0.26);}
+
+% ---------- TABLAS ----------
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.16}
+\setlength{\tabcolsep}{4.2pt}
+
+% ---------- ENCABEZADO Y PIE ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{UTEQ | FCC | ISR-401}}
+\fancyhead[R]{\small\textbf{00 -- Checklist final}}
+\fancyfoot[L]{\small Paquete ético RoutTech}
+\fancyfoot[R]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{RTTerracotta}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{RTGold}\leaders\hrule height \footrulewidth\hfill}}
+
+% ---------- TITULOS ----------
+\titleformat{\section}
+  {\large\bfseries\color{RTForest}}
+  {}{0pt}{}
+  [\vspace{1pt}\color{RTGold}\titlerule]
+\titlespacing*{\section}{0pt}{0.65em}{0.35em}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=RTForest,
+  urlcolor=RTTerracotta,
+  pdftitle={Checklist final con casillas del paquete etico RoutTech},
+  pdfauthor={Equipo RoutTech}
+}
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setstretch{1.06}
+
+\begin{document}
+\justifying
+
+% ======================= PORTADA =======================
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[RTForest] (current page.north west) rectangle ([yshift=-4.6cm]current page.north east);
+  \fill[RTTerracotta] ([yshift=-4.6cm]current page.north west) rectangle ([yshift=-4.95cm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{0.65cm}
+\begin{center}
+{\color{white}\Large\bfseries UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}
+
+\vspace{1.75cm}
+{\large\bfseries\color{RTForest} Facultad de Ciencias de la Computación\\[4pt]}
+{\normalsize\color{RTGray} Carrera de Ingeniería de Software}
+
+\vspace{0.9cm}
+
+{\Huge\bfseries\color{RTForest} CHECKLIST FINAL\\[8pt]}
+{\Large\bfseries\color{RTTerracotta} Paquete de aprobación ética}
+
+\vspace{1.1cm}
+
+\begin{tcolorbox}[width=0.90\textwidth,colback=RTCream,colframe=RTGold,boxrule=1pt,arc=2mm]
+\centering
+{\large\bfseries \Proyecto}\\[7pt]
+\textbf{Clasificación ética:} \CategoriaEtica\\
+\textbf{Asignatura:} \Asignatura\\
+\textbf{Periodo académico:} \Periodo
+\end{tcolorbox}
+
+\vfill
+\begin{tabular}{rl}
+\textbf{Documento:} & 00 -- Checklist final con casillas\\
+\textbf{Versión:} & \VersionDocumento\\
+\textbf{Paralelo:} & \Paralelo\\
+\textbf{Repositorio:} & \href{\Repositorio}{RoutTech\_ISR401}\\
+\textbf{Fecha:} & \FechaDocumento
+\end{tabular}
+
+\vspace{0.8cm}
+{\small Quevedo -- Los Ríos -- Ecuador}
+\end{center}
+\clearpage
+
+% ======================= CHECKLIST =======================
+\section{Documentos generales -- Anexo A}
+\textbf{Marque la casilla al completar cada documento y su acción final.}
+
+{\footnotesize
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{C{0.62cm} C{0.62cm} L{2.90cm} C{1.55cm} Y}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{OK}} &
+\textcolor{white}{\textbf{ID}} &
+\textcolor{white}{\textbf{Documento}} &
+\textcolor{white}{\textbf{Estado}} &
+\textcolor{white}{\textbf{Acción final}}\\
+\RTCheckBox & A1 & Protocolo de investigación & \EstadoFirma & Firmar Anderson y el docente responsable.\\
+\RTCheckBox & A2 & Instrumentos de recolección & \EstadoListo & Conservar la versión aplicada y sus códigos de evidencia.\\
+\RTCheckBox & A3 & Consentimiento informado & \EstadoEvidencia & Adjuntar los consentimientos firmados de los participantes.\\
+\RTCheckBox & A4 & Plan de gestión de datos & \EstadoListo & Mantener los datos identificables fuera de GitHub.\\
+\RTCheckBox & A5 & Aval institucional & \EstadoExterno & Obtener firma y sello de la autoridad competente.\\
+\RTCheckBox & A6 & Conflicto de intereses & \EstadoFirma & Firmar Mayra y Anderson en sus formularios individuales.\\
+\RTCheckBox & A7 & Compromiso de confidencialidad & \EstadoFirma & Firmar Mayra y Anderson.\\
+\RTCheckBox & A8 & CV resumido del docente & \EstadoFirma & Revisión y firma del docente responsable.\\
+\RTCheckBox & A9 & Nómina del equipo & \EstadoFirma & Firma del líder y visto bueno del docente.\\
+\RTCheckBox & A10 & Cronograma Gantt & \EstadoListo & --\\
+\RTCheckBox & A11 & Análisis de riesgos & \EstadoListo & --\\
+\RTCheckBox & A12 & Certificados de ética & \EstadoExterno & Adjuntar certificados verificables del docente y de un integrante.\\
+\end{tabularx}\par
+}
+
+\section{Documentos adicionales -- Categoría B}
+
+{\footnotesize
+\rowcolors{2}{RTCream}{white}
+\noindent\begin{tabularx}{\textwidth}{C{0.62cm} C{0.62cm} L{2.90cm} C{1.55cm} Y}
+\rowcolor{RTTerracotta}
+\textcolor{white}{\textbf{OK}} &
+\textcolor{white}{\textbf{ID}} &
+\textcolor{white}{\textbf{Documento}} &
+\textcolor{white}{\textbf{Estado}} &
+\textcolor{white}{\textbf{Acción final}}\\
+\RTCheckBox & B1 & Aval específico & \EstadoExterno & Obtener firma y sello de la autoridad competente.\\
+\RTCheckBox & B2 & Protección de datos personales & \EstadoListo & --\\
+\RTCheckBox & B3 & Compromiso de datos sintéticos & \EstadoFirma & Firmar Mayra, Anderson y el docente responsable.\\
+\RTCheckBox & B4 & Política de geolocalización & \EstadoFirma & Firmar Mayra, Anderson y el docente responsable.\\
+\end{tabularx}\par
+}
+
+\section{Control final}
+{\small
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{C{0.72cm} Y}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{OK}} & \textcolor{white}{\textbf{Comprobación final}}\\
+\RTCheckBox & Los archivos PDF y LaTeX abren correctamente.\\
+\RTCheckBox & Las firmas, avales y sellos requeridos están incorporados.\\
+\RTCheckBox & Los consentimientos y certificados verificables están adjuntos.\\
+\RTCheckBox & El repositorio público no contiene datos personales sensibles.\\
+\end{tabularx}
+}
+
+\end{document}

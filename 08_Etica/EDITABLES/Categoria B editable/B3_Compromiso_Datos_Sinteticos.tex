@@ -1,0 +1,185 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,top=1.85cm,bottom=1.8cm,left=1.9cm,right=1.9cm,headheight=20pt]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx,array,booktabs,colortbl}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{tikz}
+\usepackage{ragged2e}
+
+% ---------- PALETA ROUTTECH ----------
+\definecolor{RTForest}{HTML}{25463B}
+\definecolor{RTTerracotta}{HTML}{B45F45}
+\definecolor{RTGold}{HTML}{D5A64A}
+\definecolor{RTCream}{HTML}{F7F2E8}
+\definecolor{RTLight}{HTML}{EEF3F0}
+\definecolor{RTGray}{HTML}{4D5652}
+
+% ---------- DATOS ----------
+\newcommand{\Proyecto}{RoutTech: Sistema de Movilidad Colaborativa para la Comunidad Universitaria de la UTEQ}
+\newcommand{\Asignatura}{ISR-401 -- Ingeniería de Requisitos}
+\newcommand{\Periodo}{2026--2027 PPA}
+\newcommand{\CategoriaEtica}{Categoría B -- Datos personales}
+\newcommand{\Repositorio}{https://github.com/AnderJM3/RoutTech_ISR401}
+\newcommand{\FechaDocumento}{29 de julio de 2026}
+\newcommand{\VersionDocumento}{2.0}
+\newcommand{\Paralelo}{Cuarto nivel -- Software B}
+\newcommand{\EstadoDocumento}{Versión 2.0 para firma}
+\newcommand{\Mayra}{CORDOVA CARREÑO MAYRA LUCILA}
+\newcommand{\Anderson}{NARANJO FLORES ANDERSON JEAMPIERE}
+\newcommand{\Docente}{Ing. Gleiston Guerrero Ulloa, PhD}
+
+% ---------- TABLAS ----------
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.22}
+\setlength{\tabcolsep}{5pt}
+
+% ---------- ENCABEZADO Y PIE ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{UTEQ | FCC | ISR-401}}
+\fancyhead[R]{\small\textbf{B3 -- Datos sintéticos}}
+\fancyfoot[L]{\small Paquete ético RoutTech}
+\fancyfoot[R]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{RTTerracotta}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{RTGold}\leaders\hrule height \footrulewidth\hfill}}
+
+% ---------- TÍTULOS ----------
+\titleformat{\section}
+  {\large\bfseries\color{RTForest}}
+  {\thesection.}{0.45em}{}
+  [\vspace{1pt}\color{RTGold}\titlerule]
+\titlespacing*{\section}{0pt}{0.7em}{0.35em}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=RTForest,
+  urlcolor=RTTerracotta,
+  pdftitle={B3 Compromiso de Datos Sinteticos RoutTech},
+  pdfauthor={Equipo RoutTech}
+}
+\urlstyle{same}
+\setlength{\parindent}{1.1em}
+\setlength{\parskip}{2.5pt}
+\setstretch{1.10}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=3pt,topsep=3pt}
+
+\begin{document}
+\justifying
+
+% ======================= PORTADA =======================
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[RTForest] (current page.north west) rectangle ([yshift=-4.6cm]current page.north east);
+  \fill[RTTerracotta] ([yshift=-4.6cm]current page.north west) rectangle ([yshift=-4.95cm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{0.65cm}
+\begin{center}
+{\color{white}\Large\bfseries UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}
+
+\vspace{1.75cm}
+{\large\bfseries\color{RTForest} Facultad de Ciencias de la Computación\\[4pt]}
+{\normalsize\color{RTGray} Carrera de Ingeniería de Software}
+
+\vspace{0.8cm}
+
+{\Huge\bfseries\color{RTForest} COMPROMISO DE DATOS SINTÉTICOS\\[8pt]}
+{\Large\bfseries\color{RTTerracotta} B3 -- Categoría B}
+
+\vspace{1.0cm}
+
+\begin{tcolorbox}[width=0.90\textwidth,colback=RTCream,colframe=RTGold,boxrule=1pt,arc=2mm]
+\centering
+{\large\bfseries \Proyecto}\\[7pt]
+\textbf{Clasificación ética:} \CategoriaEtica\\
+\textbf{Asignatura:} \Asignatura\\
+\textbf{Periodo académico:} \Periodo
+\end{tcolorbox}
+
+\vfill
+\begin{tabular}{rl}
+\textbf{Documento:} & B3 -- Compromiso de uso exclusivo de datos sintéticos\\
+\textbf{Versión:} & \VersionDocumento\\
+\textbf{Estado:} & \EstadoDocumento\\
+\textbf{Paralelo:} & \Paralelo\\
+\textbf{Repositorio:} & \href{\Repositorio}{RoutTech\_ISR401}\\
+\textbf{Fecha:} & \FechaDocumento
+\end{tabular}
+
+\vspace{0.75cm}
+{\small Quevedo -- Los Ríos -- Ecuador}
+\end{center}
+\clearpage
+
+% ======================= CONTENIDO =======================
+\section{Identificación}
+
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{L{4.5cm} Y}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Campo}} & \textcolor{white}{\textbf{Información}}\\
+Proyecto & \Proyecto.\\
+Equipo investigador & \Mayra\ y \Anderson.\\
+Docente responsable & \Docente.\\
+Categoría ética & \CategoriaEtica.\\
+Versión y fecha & Versión \VersionDocumento, \FechaDocumento.\\
+\end{tabularx}
+
+\section{Declaración de compromiso}
+
+Los integrantes del proyecto RoutTech declaramos que, durante el desarrollo académico, la construcción del MVP, las pruebas, las demostraciones y la elaboración de evidencias se realizarán exclusivamente con datos ficticios, sintéticos, agregados o previamente disociados. En consecuencia, asumimos los siguientes compromisos:
+
+\begin{enumerate}
+  \item No importar ni copiar bases reales de viajes, reservas, pagos, credenciales institucionales, vehículos, placas, calificaciones, historiales ni ubicaciones individuales.
+  \item Utilizar personas ficticias, correos de prueba, placas inventadas, rutas generales, horarios simulados y reservas sintéticas en el MVP, capturas, demostraciones y casos de prueba.
+  \item No emplear nombres, cédulas, teléfonos, correos personales, domicilios, coordenadas exactas ni trayectorias reales de participantes.
+  \item Analizar las respuestas del cuestionario de forma agregada y mantener las entrevistas seudonimizadas mediante códigos de evidencia.
+  \item Usar únicamente información previamente disociada cuando una unidad institucional facilite datos para fines académicos.
+  \item Aislar cualquier dato real capturado por error, comunicar el incidente al docente responsable y eliminarlo de forma segura dentro de las 24 horas siguientes a su detección.
+  \item No implementar pagos reales, seguimiento de ubicación en tiempo real, autenticación institucional productiva ni conexión con sistemas oficiales de la UTEQ durante esta fase.
+  \item Revisar antes de publicar que los documentos, bases de prueba, capturas y demostraciones no permitan identificar directa o indirectamente a una persona.
+\end{enumerate}
+
+\section{Datos excluidos y datos permitidos}
+
+\rowcolors{2}{RTCream}{white}
+\noindent\begin{tabularx}{\textwidth}{Y Y}
+\rowcolor{RTTerracotta}
+\textcolor{white}{\textbf{No se utilizarán datos reales de}} &
+\textcolor{white}{\textbf{Se utilizarán únicamente}}\\
+Personas, credenciales, placas, vehículos, reservas, pagos, calificaciones, ubicaciones exactas e historiales individuales. &
+Personas ficticias, códigos de prueba, placas inventadas, zonas generales, rutas simuladas, reservas sintéticas y resultados agregados.\\
+\end{tabularx}
+
+\section{Firmas}
+
+\vspace{0.35cm}
+\noindent\begin{tabularx}{\textwidth}{Y C{4.4cm} C{3.1cm}}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Nombre}} &
+\textcolor{white}{\textbf{Firma}} &
+\textcolor{white}{\textbf{Fecha}}\\
+\Mayra & \rule{4.0cm}{0.4pt} & \rule{2.6cm}{0.4pt}\\[5pt]
+\Anderson & \rule{4.0cm}{0.4pt} & \rule{2.6cm}{0.4pt}\\[5pt]
+\Docente & \rule{4.0cm}{0.4pt} & \rule{2.6cm}{0.4pt}\\
+\end{tabularx}
+
+\end{document}

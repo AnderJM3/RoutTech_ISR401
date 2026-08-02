@@ -1,0 +1,201 @@
+\documentclass[11pt,a4paper]{article}
+
+% ============================================================
+% A11 - ANALISIS DE RIESGOS ROUTTECH
+% Documento autocontenido y compatible con pdfLaTeX en Overleaf.
+% ============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,top=1.85cm,bottom=1.8cm,left=1.9cm,right=1.9cm,headheight=22pt]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx,array,colortbl,longtable}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{tikz}
+\usepackage{ragged2e}
+\usepackage{pdflscape}
+
+% ---------- PALETA ROUTTECH ----------
+\definecolor{RTForest}{HTML}{25463B}
+\definecolor{RTTerracotta}{HTML}{B45F45}
+\definecolor{RTGold}{HTML}{D5A64A}
+\definecolor{RTCream}{HTML}{F7F2E8}
+\definecolor{RTLight}{HTML}{EEF3F0}
+\definecolor{RTGray}{HTML}{4D5652}
+\definecolor{RTRed}{HTML}{A23B3B}
+\definecolor{RTGreen}{HTML}{3F7D5A}
+\definecolor{RTAmber}{HTML}{9C6B18}
+
+% ---------- DATOS DEL DOCUMENTO ----------
+\newcommand{\Proyecto}{RoutTech: Sistema de Movilidad Colaborativa para la Comunidad Universitaria de la UTEQ}
+\newcommand{\Asignatura}{ISR-401 -- Ingeniería de Requisitos}
+\newcommand{\Periodo}{2026--2027 PPA}
+\newcommand{\CategoriaEtica}{Categoría B -- Datos personales}
+\newcommand{\Repositorio}{https://github.com/AnderJM3/RoutTech_ISR401}
+\newcommand{\FechaDocumento}{29 de julio de 2026}
+\newcommand{\VersionDocumento}{2.0}
+\newcommand{\Paralelo}{Cuarto nivel -- Software B}
+
+% ---------- TABLAS ----------
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.16}
+\setlength{\tabcolsep}{4pt}
+
+% ---------- ENCABEZADO Y PIE ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{UTEQ | FCC | ISR-401}}
+\fancyhead[R]{\small\textbf{A11 -- Análisis de riesgos}}
+\fancyfoot[L]{\small Paquete ético RoutTech}
+\fancyfoot[R]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{RTTerracotta}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{RTGold}\leaders\hrule height \footrulewidth\hfill}}
+
+% ---------- TITULOS ----------
+\titleformat{\section}
+  {\large\bfseries\color{RTForest}}
+  {\thesection.}{0.45em}{}
+  [\vspace{1pt}\color{RTGold}\titlerule]
+\titlespacing*{\section}{0pt}{0.75em}{0.35em}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=RTForest,
+  urlcolor=RTTerracotta,
+  pdftitle={A11 Analisis de Riesgos RoutTech},
+  pdfauthor={Equipo RoutTech}
+}
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setstretch{1.08}
+
+\begin{document}
+\justifying
+
+% ======================= PORTADA =======================
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[RTForest] (current page.north west) rectangle ([yshift=-4.6cm]current page.north east);
+  \fill[RTTerracotta] ([yshift=-4.6cm]current page.north west) rectangle ([yshift=-4.95cm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{0.65cm}
+\begin{center}
+{\color{white}\Large\bfseries UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}
+
+\vspace{1.75cm}
+{\large\bfseries\color{RTForest} Facultad de Ciencias de la Computación\\[4pt]}
+{\normalsize\color{RTGray} Carrera de Ingeniería de Software}
+
+\vspace{0.8cm}
+
+{\Huge\bfseries\color{RTForest} ANÁLISIS DE RIESGOS\\[8pt]}
+{\Large\bfseries\color{RTTerracotta} A11 -- Medidas de mitigación}
+
+\vspace{1.0cm}
+
+\renewcommand{\arraystretch}{1.35}
+\begin{tabularx}{0.90\textwidth}{>{\bfseries\color{RTForest}}L{4.0cm} Y}
+\rowcolor{RTCream}
+Proyecto & \Proyecto \\
+Clasificación ética & \CategoriaEtica \\
+Asignatura & \Asignatura \\
+Periodo académico & \Periodo \\
+Paralelo & \Paralelo \\
+\end{tabularx}
+\renewcommand{\arraystretch}{1.16}
+
+\vfill
+\begin{tabular}{rl}
+\textbf{Documento:} & A11 -- Análisis de riesgos y medidas de mitigación \\
+\textbf{Versión:} & \VersionDocumento \\
+\textbf{Estado:} & Versión 2.0 para revisión \\
+\textbf{Repositorio:} & \href{\Repositorio}{RoutTech\_ISR401} \\
+\textbf{Fecha:} & \FechaDocumento
+\end{tabular}
+
+\vspace{0.75cm}
+{\small Quevedo -- Los Ríos -- Ecuador}
+\end{center}
+\clearpage
+
+% ======================= CONTENIDO =======================
+\begin{landscape}
+\thispagestyle{fancy}
+
+\section{Metodología de valoración}
+
+La matriz utiliza una evaluación cualitativa de \textbf{probabilidad}, \textbf{impacto} y \textbf{nivel de riesgo}. Cada riesgo incluye una medida concreta de prevención o mitigación.
+
+\scriptsize
+\begin{center}
+\begin{tabularx}{0.96\linewidth}{L{2.5cm} Y Y Y}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Nivel}} &
+\textcolor{white}{\textbf{Probabilidad}} &
+\textcolor{white}{\textbf{Impacto}} &
+\textcolor{white}{\textbf{Tratamiento}}\\
+\cellcolor{RTLight}\textcolor{RTGreen}{\textbf{Bajo}} & Poco probable. & Consecuencia menor y reversible. & Mantener controles y verificar.\\
+\cellcolor{RTCream}\textcolor{RTAmber}{\textbf{Medio}} & Puede ocurrir. & Afectación moderada al estudio, datos o participantes. & Aplicar mitigación y supervisar.\\
+\cellcolor{RTLight}\textcolor{RTRed}{\textbf{Alto}} & Probable o con exposición directa. & Daño relevante o incumplimiento ético. & Tratar antes de continuar.\\
+\end{tabularx}
+\end{center}
+
+\section{Matriz de riesgos y medidas de mitigación}
+
+\fontsize{7.35}{8.15}\selectfont
+\renewcommand{\arraystretch}{1.00}
+\setlength{\tabcolsep}{2.6pt}
+\rowcolors{2}{RTLight}{white}
+\begin{longtable}{C{0.75cm} L{2.6cm} L{4.9cm} C{1.35cm} C{1.35cm} C{1.35cm} L{8.0cm}}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{ID}} &
+\textcolor{white}{\textbf{Categoría}} &
+\textcolor{white}{\textbf{Riesgo}} &
+\textcolor{white}{\textbf{Prob.}} &
+\textcolor{white}{\textbf{Impacto}} &
+\textcolor{white}{\textbf{Nivel}} &
+\textcolor{white}{\textbf{Medida de prevención o mitigación}}\\
+\endfirsthead
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{ID}} &
+\textcolor{white}{\textbf{Categoría}} &
+\textcolor{white}{\textbf{Riesgo}} &
+\textcolor{white}{\textbf{Prob.}} &
+\textcolor{white}{\textbf{Impacto}} &
+\textcolor{white}{\textbf{Nivel}} &
+\textcolor{white}{\textbf{Medida de prevención o mitigación}}\\
+\endhead
+R-01 & Ético & Filtración de datos personales, consentimientos o transcripciones originales. & Media & Alto & Alto & Mantener los datos crudos fuera de GitHub, utilizar almacenamiento local cifrado y revisar los archivos antes de compartirlos.\\
+R-02 & Ético & Publicación accidental de domicilios, recorridos o ubicaciones individuales. & Media & Alto & Alto & Generalizar origen y destino a sector, barrio, parroquia o campus; eliminar coordenadas y revisar cada evidencia antes de publicarla.\\
+R-03 & Ético & Exposición de placas, rostros, voces o imágenes sin autorización. & Media & Alto & Alto & Solicitar autorizaciones separadas, aplicar desenfoque o recorte y excluir cualquier archivo identificable del repositorio.\\
+R-04 & Ético & Uso de información para vigilancia académica, laboral o disciplinaria. & Baja & Alto & Medio & Prohibir usos ajenos al estudio, presentar resultados agregados y no elaborar perfiles individuales.\\
+R-05 & Ético & Contacto no autorizado, hostigamiento o intercambio de datos entre participantes. & Baja & Alto & Medio & No compartir teléfonos ni correos; probar la comunicación del MVP únicamente con cuentas y datos sintéticos.\\
+R-06 & Ético & Incomodidad, presión o malestar durante entrevistas y validaciones. & Media & Medio & Medio & Recordar el derecho a no responder, hacer pausas o retirarse sin consecuencias; detener la actividad ante cualquier malestar.\\
+R-07 & Técnico & Pérdida, corrupción o eliminación accidental de evidencias. & Media & Medio & Medio & Mantener dos copias cifradas, verificar semanalmente su integridad y registrar los cambios de versión.\\
+R-08 & Técnico & Carga accidental de archivos sensibles al repositorio público. & Media & Alto & Alto & Revisar cada commit, configurar \texttt{.gitignore} y retirar inmediatamente cualquier archivo publicado por error.\\
+R-09 & Ético & Reidentificación de participantes mediante combinación de variables. & Media & Alto & Alto & Suprimir identificadores directos, reducir la precisión de variables y revisar el riesgo de reidentificación antes de divulgar datos.\\
+R-10 & Reputacional & Afectación reputacional para participantes o para la UTEQ. & Baja & Alto & Medio & Evitar atribuir opiniones individuales, contextualizar los hallazgos y revisar el material institucional antes de difundirlo.\\
+R-11 & Académico & Fabricación, alteración o interpretación no sustentada de datos. & Baja & Alto & Medio & Mantener trazabilidad entre evidencia, requisito y resultado; conservar los originales y documentar las transformaciones.\\
+R-12 & Operativo & Suspensión o retiro de un aval institucional. & Baja & Alto & Medio & Detener la recolección afectada y obtener una nueva autorización antes de continuar.\\
+R-13 & Operativo & Incumplimiento de plazos por reducción del equipo investigador. & Alta & Medio & Alto & Priorizar entregables, distribuir las tareas entre los dos integrantes y realizar seguimiento semanal del cronograma.\\
+R-14 & Ético & Inclusión accidental de menores de edad. & Baja & Alto & Medio & Confirmar la mayoría de edad antes del consentimiento y excluir cualquier caso que no pueda verificarse.\\
+R-15 & Técnico & Interpretación de una recomendación automática como decisión obligatoria. & Media & Medio & Medio & Mostrar los criterios, límites y advertencias de la recomendación, permitiendo rechazarla o modificarla.\\
+\end{longtable}
+\end{landscape}
+
+\end{document}

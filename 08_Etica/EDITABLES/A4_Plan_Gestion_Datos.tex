@@ -1,0 +1,350 @@
+\documentclass[10pt,a4paper]{article}
+
+% ============================================================
+% A4 - PLAN DE GESTION DE DATOS ROUTTECH
+% Documento autocontenido y compatible con pdfLaTeX en Overleaf.
+% No requiere archivos .sty, configuracion.tex ni subcarpetas.
+% ============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,top=1.85cm,bottom=1.8cm,left=1.9cm,right=1.9cm,headheight=20pt]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx,array,booktabs,colortbl,longtable}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{tikz}
+\usepackage{ragged2e}
+\usepackage{amssymb}
+
+% ---------- PALETA PROPIA ROUTTECH ----------
+\definecolor{RTForest}{HTML}{25463B}
+\definecolor{RTTerracotta}{HTML}{B45F45}
+\definecolor{RTGold}{HTML}{D5A64A}
+\definecolor{RTCream}{HTML}{F7F2E8}
+\definecolor{RTLight}{HTML}{EEF3F0}
+\definecolor{RTGray}{HTML}{4D5652}
+\definecolor{RTRed}{HTML}{A23B3B}
+
+% ---------- DATOS DEL DOCUMENTO ----------
+\newcommand{\Proyecto}{RoutTech: Sistema de Movilidad Colaborativa para la Comunidad Universitaria de la UTEQ}
+\newcommand{\Asignatura}{ISR-401 -- Ingeniería de Requisitos}
+\newcommand{\Periodo}{2026--2027 PPA}
+\newcommand{\CategoriaEtica}{Categoría B -- Datos personales}
+\newcommand{\Repositorio}{https://github.com/AnderJM3/RoutTech_ISR401}
+\newcommand{\FechaDocumento}{29 de julio de 2026}
+\newcommand{\VersionDocumento}{2.0}
+\newcommand{\Paralelo}{Cuarto nivel -- Software B}
+\newcommand{\EstadoDocumento}{Versión 2.0 para revisión ética y firma}
+
+\newcommand{\Docente}{Ing. Gleiston Guerrero Ulloa, PhD}
+\newcommand{\CorreoDocente}{gguerrero@uteq.edu.ec}
+
+\newcommand{\Anderson}{NARANJO FLORES ANDERSON JEAMPIERE}
+\newcommand{\CedulaAnderson}{1207412659}
+\newcommand{\MatriculaAnderson}{617251}
+\newcommand{\CorreoAnderson}{anaranjof2@uteq.edu.ec}
+
+\newcommand{\Mayra}{CORDOVA CARREÑO MAYRA LUCILA}
+\newcommand{\CedulaMayra}{0969483943}
+\newcommand{\MatriculaMayra}{617891}
+\newcommand{\CorreoMayra}{mcordovac2@uteq.edu.ec}
+
+% ---------- TABLAS ----------
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{J}{>{\justifying\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{P}[1]{>{\justifying\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.20}
+\setlength{\tabcolsep}{4.2pt}
+
+% ---------- ENCABEZADO Y PIE ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{UTEQ | FCC | ISR-401}}
+\fancyhead[R]{\small\textbf{A4 -- Plan de gestión de datos}}
+\fancyfoot[L]{\small Paquete ético RoutTech}
+\fancyfoot[R]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{RTTerracotta}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{RTGold}\leaders\hrule height \footrulewidth\hfill}}
+
+% ---------- TÍTULOS ----------
+\titleformat{\section}
+  {\large\bfseries\color{RTForest}}
+  {\thesection.}{0.45em}{}
+  [\vspace{1pt}\color{RTGold}\titlerule]
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{RTTerracotta}}
+  {\thesubsection}{0.45em}{}
+\titlespacing*{\section}{0pt}{0.75em}{0.35em}
+\titlespacing*{\subsection}{0pt}{0.55em}{0.25em}
+
+% ---------- CAJAS ----------
+\newtcolorbox{InfoBox}[1][]{
+  enhanced,breakable,
+  colback=RTLight,colframe=RTForest,
+  boxrule=0.8pt,arc=2mm,
+  left=2.6mm,right=2.6mm,top=1.6mm,bottom=1.6mm,
+  title=#1,fonttitle=\bfseries,coltitle=white,
+  colbacktitle=RTForest
+}
+\newtcolorbox{WarningBox}[1][]{
+  enhanced,breakable,
+  colback=RTCream,colframe=RTTerracotta,
+  boxrule=0.8pt,arc=2mm,
+  left=2.6mm,right=2.6mm,top=1.6mm,bottom=1.6mm,
+  title=#1,fonttitle=\bfseries,coltitle=white,
+  colbacktitle=RTTerracotta
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=RTForest,
+  urlcolor=RTTerracotta,
+  pdftitle={A4 Plan de Gestion de Datos RoutTech},
+  pdfauthor={Equipo RoutTech}
+}
+\urlstyle{same}
+\setlength{\parindent}{1.1em}
+\setlength{\parskip}{2.5pt}
+\setstretch{1.10}
+\setlist[itemize]{leftmargin=1.35em,itemsep=1pt,topsep=2pt}
+\setlist[enumerate]{leftmargin=1.55em,itemsep=1pt,topsep=2pt}
+
+\begin{document}
+\justifying
+
+% ======================= PORTADA =======================
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[RTForest] (current page.north west) rectangle ([yshift=-4.6cm]current page.north east);
+  \fill[RTTerracotta] ([yshift=-4.6cm]current page.north west) rectangle ([yshift=-4.95cm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{0.65cm}
+\begin{center}
+{\color{white}\Large\bfseries UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}
+
+\vspace{1.75cm}
+{\large\bfseries\color{RTForest} Facultad de Ciencias de la Computación\\[4pt]}
+{\normalsize\color{RTGray} Carrera de Ingeniería de Software}
+
+\vspace{0.8cm}
+
+{\Huge\bfseries\color{RTForest} PLAN DE GESTIÓN DE DATOS\\[8pt]}
+{\Large\bfseries\color{RTTerracotta} A4 -- Data Management Plan}
+
+\vspace{1.0cm}
+
+\begin{tcolorbox}[width=0.90\textwidth,colback=RTCream,colframe=RTGold,boxrule=1pt,arc=2mm]
+\centering
+{\large\bfseries \Proyecto}\\[7pt]
+\textbf{Clasificación ética:} \CategoriaEtica\\
+\textbf{Asignatura:} \Asignatura\\
+\textbf{Periodo académico:} \Periodo
+\end{tcolorbox}
+
+\vfill
+\begin{tabular}{rl}
+\textbf{Documento:} & A4 -- Plan de gestión de datos\\
+\textbf{Versión:} & \VersionDocumento\\
+\textbf{Estado:} & \EstadoDocumento\\
+\textbf{Repositorio:} & \href{\Repositorio}{RoutTech\_ISR401}\\
+\textbf{Fecha:} & \FechaDocumento
+\end{tabular}
+
+\vspace{0.75cm}
+{\small Quevedo -- Los Ríos -- Ecuador}
+\end{center}
+\clearpage
+
+% ======================= CONTENIDO =======================
+\begin{WarningBox}[Principio de separación de datos]
+El repositorio \href{\Repositorio}{RoutTech\_ISR401} se utilizará para documentación, instrumentos, matrices, código y materiales completamente anonimizados. Los consentimientos firmados, cédulas, grabaciones identificables y archivos crudos no se almacenarán ni publicarán en GitHub; se conservarán únicamente en carpetas locales cifradas bajo custodia del equipo investigador.
+\end{WarningBox}
+
+\section{Identificación y alcance del plan}
+
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{@{}L{4.45cm} J@{}}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Campo}} & \textcolor{white}{\textbf{Información}}\\
+Proyecto & \Proyecto.\\
+Categoría ética & \CategoriaEtica.\\
+Equipo custodio & \Anderson\ y \Mayra.\\
+Docente responsable & \Docente\ -- \href{mailto:\CorreoDocente}{\CorreoDocente}.\\
+Paralelo & \Paralelo.\\
+Repositorio del proyecto & \url{\Repositorio}.\\
+Vigencia del plan & Desde la aprobación interna del protocolo hasta la destrucción o anonimización definitiva de los datos.\\
+Objetivo & Definir cómo se recopilarán, nombrarán, almacenarán, protegerán, respaldarán, utilizarán, compartirán, conservarán y eliminarán los datos del proyecto RoutTech.\\
+\end{tabularx}
+
+\section{Inventario y clasificación de los datos}
+
+\small
+\rowcolors{2}{RTCream}{white}
+\noindent\begin{tabularx}{\textwidth}{@{}L{2.55cm} L{3.0cm} J L{2.45cm}@{}}
+\rowcolor{RTTerracotta}
+\textcolor{white}{\textbf{Tipo}} &
+\textcolor{white}{\textbf{Formato}} &
+\textcolor{white}{\textbf{Contenido}} &
+\textcolor{white}{\textbf{Clasificación}}\\
+Consentimientos & PDF o imagen digitalizada & Nombre, cédula, firma, fecha y autorizaciones del participante. & Restringido\\
+Entrevistas & MP4, MP3/WAV, DOCX/TXT & Imagen, voz, respuestas, transcripción y metadatos. & Restringido hasta anonimizar\\
+Cuestionario & XLSX/CSV y resumen PDF & Respuestas de Google Forms; no se publicarán identificadores directos. & Interno / anonimizado\\
+Observación & DOCX/XLSX, JPG/PNG autorizados & Notas de campo y fotografías generales sin rostros, placas ni domicilios. & Interno / publicable tras revisión\\
+Walkthrough & MP4, PDF, XLSX & Grabación autorizada, acta, observaciones y evaluación de requisitos o mockups. & Restringido hasta anonimizar\\
+Artefactos técnicos & TEX, PDF, CSV, JSON, PNG/SVG, PUML & Requisitos, matrices, diagramas, mockups, scripts y código del MVP. & Publicable tras revisión\\
+\end{tabularx}
+\normalsize
+
+\begin{InfoBox}[Volumen estimado]
+Considerando dieciséis entrevistas, audios, transcripciones, documentos y sesiones de validación, se prevé un volumen aproximado de \textbf{20 a 40 GB}. Este rango es una estimación operativa y se actualizará si el tamaño real de los archivos supera lo previsto.
+\end{InfoBox}
+
+\section{Recolección y minimización}
+
+La recolección se limitará a la información necesaria para elicitar y validar requisitos de RoutTech. Mayra Cordova dirigirá el trabajo de campo y verificará que exista consentimiento previo; Anderson Naranjo controlará la organización, integridad y trazabilidad de los archivos. Se aplicarán las siguientes reglas:
+
+\begin{itemize}
+  \item No solicitar contraseñas, credenciales institucionales reales, datos bancarios, placas reales ni direcciones domiciliarias exactas.
+  \item No activar seguimiento de geolocalización en tiempo real durante el estudio académico.
+  \item Registrar únicamente el perfil general del participante y los metadatos necesarios para la trazabilidad.
+  \item Usar códigos seudónimos como \texttt{EV-ENT-001}, evitando nombres en archivos de trabajo y análisis.
+  \item Recoger audio, video o fotografías solo cuando exista autorización expresa en el consentimiento.
+  \item Utilizar datos ficticios o sintéticos en el MVP, demostraciones, pruebas y capturas públicas.
+\end{itemize}
+
+\section{Convención de nombres y metadatos}
+
+\begin{InfoBox}[Formato de nombre]
+\texttt{AAAA-MM-DD\_Tipo\_Codigo\_Perfil\_vN.ext}
+
+Ejemplo: \texttt{2026-07-29\_Entrevista\_EV-ENT-001\_Estudiante\_v1.mp4}
+\end{InfoBox}
+
+Cada evidencia deberá registrar como mínimo: código, fecha, tipo de técnica, perfil general, responsable de captura, versión, formato, duración o tamaño, estado de consentimiento, estado de anonimización y ubicación de almacenamiento. Los cambios relevantes generarán una nueva versión; no se sobrescribirán archivos originales sin mantener una copia verificable.
+
+\section{Almacenamiento, seguridad y acceso}
+
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{@{}L{3.25cm} J L{3.15cm}@{}}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Zona}} &
+\textcolor{white}{\textbf{Contenido y medida de protección}} &
+\textcolor{white}{\textbf{Acceso}}\\
+Repositorio GitHub & Documentos, código, diagramas, instrumentos y datos completamente anonimizados. No contendrá cédulas, firmas ni grabaciones identificables. & Público según configuración del repositorio\\
+Carpeta local cifrada principal & Datos crudos, consentimientos, videos, audios y transcripciones no anonimizadas. Cifrado mediante contenedor o archivo AES-256 protegido con contraseña robusta. & Anderson y Mayra\\
+Respaldo cifrado & Copia sincronizada semanalmente en el segundo equipo autorizado o unidad externa cifrada, separada de la copia principal. & Anderson y Mayra\\
+Entrega al docente & Documentos requeridos para revisión ética o académica, compartidos de forma directa y sin publicar enlaces abiertos. & Docente responsable\\
+\end{tabularx}
+
+Las contraseñas de cifrado no se almacenarán dentro del repositorio ni en archivos de texto junto a los datos. Los dispositivos deberán contar con bloqueo de sesión, sistema actualizado y protección antimalware. El intercambio de archivos identificables se evitará; cuando sea indispensable, se realizará mediante un canal institucional o archivo cifrado cuya clave se comunique por un medio diferente.
+
+\section{Copias de seguridad, integridad y control de versiones}
+
+\begin{enumerate}
+  \item Se mantendrá una copia principal y una copia de respaldo cifrada, actualizada al menos una vez por semana durante el trabajo de campo.
+  \item Se comprobará mensualmente que los archivos críticos puedan abrirse y que el respaldo no esté corrupto.
+  \item Los documentos técnicos utilizarán control de versiones en Git; los datos crudos no se incorporarán al historial del repositorio.
+  \item Las modificaciones de transcripciones y bases de datos producirán versiones numeradas, conservando el archivo original de solo lectura.
+  \item Cuando sea necesario, se generarán sumas de verificación SHA-256 para comprobar la integridad de entregables y conjuntos anonimizados.
+\end{enumerate}
+
+\section{Anonimización y preparación para análisis}
+
+La anonimización se realizará antes de integrar datos en informes o repositorios públicos. Se eliminarán nombres, cédulas, correos, teléfonos, firmas, rostros, voces no autorizadas, placas, domicilios, enlaces personales y combinaciones que permitan reidentificación. Las ubicaciones se generalizarán a campus, sector, barrio o parroquia. Las citas textuales se revisarán para retirar referencias personales o contextuales innecesarias.
+
+Las entrevistas se codificarán en Microsoft Excel mediante categorías temáticas. Las respuestas del cuestionario de Google Forms se exportarán para calcular frecuencias y porcentajes, evitando publicar respuestas individuales que contengan información identificable. Los resultados se presentarán de forma agregada.
+
+\section{Retención, eliminación y cierre}
+
+\rowcolors{2}{RTCream}{white}
+\noindent\begin{tabularx}{\textwidth}{@{}L{4.0cm} J L{2.75cm}@{}}
+\rowcolor{RTTerracotta}
+\textcolor{white}{\textbf{Elemento}} &
+\textcolor{white}{\textbf{Política}} &
+\textcolor{white}{\textbf{Plazo}}\\
+Datos identificables y grabaciones & Conservación cifrada para verificación académica; eliminación segura al concluir el plazo o antes si dejan de ser necesarios. & Hasta 24 meses tras el cierre\\
+Consentimientos firmados & Custodia restringida para demostrar autorización y atender solicitudes del participante. & Hasta 24 meses tras el cierre\\
+Datos anonimizados y agregados & Podrán mantenerse como parte de la documentación académica y científica, siempre que no permitan reidentificación. & Conservación académica\\
+Código, diagramas y documentos & Permanecerán en el repositorio del proyecto conforme a su licencia y a las decisiones del equipo y la UTEQ. & Indefinido mientras sean pertinentes\\
+\end{tabularx}
+
+La eliminación se realizará mediante borrado seguro de archivos y copias de respaldo. El equipo registrará la fecha, el tipo de datos eliminados, el responsable y el método aplicado. Si un dispositivo se reasigna o desecha, se eliminarán previamente los contenedores cifrados y sus copias.
+
+\section{Publicación, reutilización y licencias}
+
+Solo podrán publicarse instrumentos, requisitos, matrices, scripts, diagramas, datos agregados y transcripciones plenamente anonimizadas. No se publicarán consentimientos, cédulas, firmas, grabaciones identificables ni bases de datos crudas. Antes de cualquier depósito en GitHub, OSF o Zenodo, Anderson y Mayra efectuarán una revisión conjunta de anonimización.
+
+Los materiales elaborados por el equipo podrán utilizar una licencia académica o Creative Commons cuando corresponda; dicha licencia no se extenderá a información de participantes ni a contenido institucional cuya publicación no haya sido autorizada.
+
+\section{Derechos de los participantes}
+
+Las personas participantes podrán solicitar información sobre el tratamiento de sus datos, corrección de datos identificables, retiro de su participación o eliminación de archivos vinculables mientras todavía sea posible identificarlos. Las solicitudes se dirigirán a \href{mailto:\CorreoAnderson}{\CorreoAnderson}, \href{mailto:\CorreoMayra}{\CorreoMayra} o al docente responsable en \href{mailto:\CorreoDocente}{\CorreoDocente}. Una vez que la información haya sido anonimizada e integrada en resultados agregados, podría no ser técnicamente posible separar una contribución individual.
+
+\section{Gestión de incidentes}
+
+Ante pérdida, acceso no autorizado, publicación accidental o alteración de datos, el integrante que detecte el incidente deberá:
+
+\begin{enumerate}
+  \item detener el acceso o difusión y preservar la evidencia del incidente;
+  \item informar al docente responsable y al otro integrante del equipo en un plazo interno máximo de 72 horas;
+  \item identificar los archivos, participantes y sistemas afectados;
+  \item cambiar credenciales, revocar enlaces o eliminar copias expuestas, según corresponda;
+  \item documentar causas, acciones correctivas y medidas para evitar recurrencia;
+  \item contactar a los participantes afectados cuando la evaluación ética o institucional así lo requiera.
+\end{enumerate}
+
+\section{Responsabilidades}
+
+\small
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{@{}L{3.9cm} L{3.45cm} J@{}}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Responsable}} &
+\textcolor{white}{\textbf{Rol}} &
+\textcolor{white}{\textbf{Funciones de gestión de datos}}\\
+\Anderson & Líder y administrador documental & Estructura de archivos, control de versiones, revisión de anonimización, integridad, respaldo, GitHub, LaTeX y cierre del plan.\\
+\Mayra & Responsable de trabajo de campo y requisitos & Consentimiento, captura de evidencias, asignación de códigos, metadatos, transcripción, codificación temática y reporte inmediato de incidentes.\\
+\Docente & Supervisor académico & Revisión ética y metodológica, orientación ante incidentes y autorización de entregables institucionales.\\
+\end{tabularx}
+\normalsize
+
+\section{Aprobación del plan}
+
+\begin{InfoBox}[Declaración]
+Quienes suscriben declaran conocer este Plan de Gestión de Datos y se comprometen a aplicarlo durante la recolección, análisis, almacenamiento, publicación y cierre del proyecto RoutTech.
+\end{InfoBox}
+
+\vspace{0.8cm}
+\noindent\begin{tabularx}{\textwidth}{@{}Y Y@{}}
+\centering\rule{6.1cm}{0.4pt} & \centering\arraybackslash\rule{6.1cm}{0.4pt}\\
+\centering \Anderson & \centering\arraybackslash \Mayra\\
+\centering Líder del equipo & \centering\arraybackslash Responsable de trabajo de campo\\[4pt]
+\centering C.I. \CedulaAnderson & \centering\arraybackslash C.I. \CedulaMayra\\[4pt]
+\centering Fecha: \rule{2.7cm}{0.4pt} & \centering\arraybackslash Fecha: \rule{2.7cm}{0.4pt}
+\end{tabularx}
+
+\vspace{1.1cm}
+\begin{center}
+\rule{7.0cm}{0.4pt}\\
+\Docente\\
+Docente responsable\\[4pt]
+Fecha: \rule{3.0cm}{0.4pt}
+\end{center}
+
+\end{document}

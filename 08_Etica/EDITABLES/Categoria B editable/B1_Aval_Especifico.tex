@@ -1,0 +1,192 @@
+\documentclass[11pt,a4paper]{article}
+
+% ============================================================
+% B1 - AVAL ESPECIFICO ROUTTECH
+% Documento autocontenido y compatible con pdfLaTeX en Overleaf.
+% ============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,top=1.85cm,bottom=1.8cm,left=1.9cm,right=1.9cm,headheight=22pt]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx,array,booktabs,colortbl}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{tikz}
+\usepackage{ragged2e}
+
+% ---------- PALETA ROUTTECH ----------
+\definecolor{RTForest}{HTML}{25463B}
+\definecolor{RTTerracotta}{HTML}{B45F45}
+\definecolor{RTGold}{HTML}{D5A64A}
+\definecolor{RTCream}{HTML}{F7F2E8}
+\definecolor{RTLight}{HTML}{EEF3F0}
+\definecolor{RTGray}{HTML}{4D5652}
+
+% ---------- DATOS ----------
+\newcommand{\Proyecto}{RoutTech: Sistema de Movilidad Colaborativa para la Comunidad Universitaria de la UTEQ}
+\newcommand{\Asignatura}{ISR-401 -- Ingeniería de Requisitos}
+\newcommand{\Periodo}{2026--2027 PPA}
+\newcommand{\CategoriaEtica}{Categoría B -- Datos personales}
+\newcommand{\Repositorio}{https://github.com/AnderJM3/RoutTech_ISR401}
+\newcommand{\FechaDocumento}{29 de julio de 2026}
+\newcommand{\VersionDocumento}{2.0}
+\newcommand{\Paralelo}{Cuarto nivel -- Software B}
+\newcommand{\Docente}{Ing. Gleiston Guerrero Ulloa, PhD}
+\newcommand{\CorreoDocente}{gguerrero@uteq.edu.ec}
+\newcommand{\Anderson}{NARANJO FLORES ANDERSON JEAMPIERE}
+\newcommand{\Mayra}{CORDOVA CARREÑO MAYRA LUCILA}
+
+% ---------- TABLAS ----------
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.20}
+\setlength{\tabcolsep}{4.5pt}
+
+% ---------- ENCABEZADO Y PIE ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{UTEQ | FCC | ISR-401}}
+\fancyhead[R]{\small\textbf{B1 -- Aval específico}}
+\fancyfoot[L]{\small Paquete ético RoutTech}
+\fancyfoot[R]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{RTTerracotta}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{RTGold}\leaders\hrule height \footrulewidth\hfill}}
+
+% ---------- TITULOS ----------
+\titleformat{\section}
+  {\large\bfseries\color{RTForest}}
+  {}{0pt}{}
+  [\vspace{1pt}\color{RTGold}\titlerule]
+\titlespacing*{\section}{0pt}{0.65em}{0.35em}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=RTForest,
+  urlcolor=RTTerracotta,
+  pdftitle={B1 Aval Especifico RoutTech},
+  pdfauthor={Equipo RoutTech}
+}
+\urlstyle{same}
+\setlength{\parindent}{1.1em}
+\setlength{\parskip}{2.5pt}
+\setstretch{1.08}
+\setlist[enumerate]{leftmargin=1.55em,itemsep=2pt,topsep=3pt}
+
+\begin{document}
+\justifying
+
+% ======================= PORTADA =======================
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[RTForest] (current page.north west) rectangle ([yshift=-4.6cm]current page.north east);
+  \fill[RTTerracotta] ([yshift=-4.6cm]current page.north west) rectangle ([yshift=-4.95cm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{0.65cm}
+\begin{center}
+{\color{white}\Large\bfseries UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}
+
+\vspace{1.75cm}
+{\large\bfseries\color{RTForest} Facultad de Ciencias de la Computación\\[4pt]}
+{\normalsize\color{RTGray} Carrera de Ingeniería de Software}
+
+\vspace{0.8cm}
+
+{\Huge\bfseries\color{RTForest} AVAL ESPECÍFICO\\[8pt]}
+{\Large\bfseries\color{RTTerracotta} B1 -- Categoría B}
+
+\vspace{1.0cm}
+
+\begin{tcolorbox}[width=0.90\textwidth,colback=RTCream,colframe=RTGold,boxrule=1pt,arc=2mm]
+\centering
+{\large\bfseries \Proyecto}\\[7pt]
+\textbf{Clasificación ética:} \CategoriaEtica\\
+\textbf{Asignatura:} \Asignatura\\
+\textbf{Periodo académico:} \Periodo
+\end{tcolorbox}
+
+\vfill
+\begin{tabular}{rl}
+\textbf{Documento:} & B1 -- Aval específico de la unidad participante\\
+\textbf{Versión:} & \VersionDocumento\\
+\textbf{Estado:} & Para emisión, firma y sello institucional\\
+\textbf{Repositorio:} & \href{\Repositorio}{RoutTech\_ISR401}\\
+\textbf{Fecha:} & \FechaDocumento
+\end{tabular}
+
+\vspace{0.75cm}
+{\small Quevedo -- Los Ríos -- Ecuador}
+\end{center}
+\clearpage
+
+% ======================= AVAL =======================
+\section{Aval específico para actividades de investigación}
+
+\begin{flushright}
+Quevedo, \rule{1.0cm}{0.4pt} de \rule{3.0cm}{0.4pt} de 2026
+\end{flushright}
+
+\noindent
+\begin{tabularx}{\textwidth}{L{4.1cm} Y}
+Nombre de la autoridad & \hrulefill\\
+Cédula o identificación & \hrulefill\\
+Cargo & \hrulefill\\
+Unidad o dependencia & \hrulefill\\
+\end{tabularx}
+
+\vspace{0.25cm}
+\noindent En calidad de autoridad competente de la unidad indicada, autorizo al equipo integrado por \textbf{\Anderson} y \textbf{\Mayra}, bajo la responsabilidad académica de \textbf{\Docente}, a ejecutar actividades de investigación para el proyecto \textbf{RoutTech}, correspondiente a \Asignatura, \Paralelo.
+
+\section{Actividades autorizadas}
+
+\begin{enumerate}
+  \item Entrevistar a estudiantes, docentes y personal administrativo mayores de edad que participen voluntariamente.
+  \item Aplicar cuestionarios y realizar sesiones de validación de requisitos y mockups, con consentimiento informado previo.
+  \item Observar condiciones generales de movilidad universitaria sin registrar rostros, placas, domicilios ni trayectorias individuales.
+  \item Analizar información seudonimizada, agregada o disociada con fines exclusivamente académicos y científicos.
+  \item Utilizar únicamente datos ficticios o sintéticos en el MVP, las demostraciones y las pruebas del sistema.
+\end{enumerate}
+
+\section{Condiciones}
+
+La autorización no incluye acceso a bases institucionales restringidas, expedientes académicos, credenciales, domicilios exactos, placas vehiculares ni geolocalización en tiempo real. Los consentimientos, audios, videos y archivos identificables se mantendrán fuera del repositorio público. En GitHub solo se publicarán instrumentos, artefactos y resultados completamente anonimizados. La unidad podrá suspender las actividades si se incumplen estas condiciones.
+
+\section{Persona de contacto de la unidad}
+
+\noindent
+\rowcolors{2}{RTLight}{white}
+\begin{tabularx}{\textwidth}{Y L{3.5cm} L{4.2cm} L{3.1cm}}
+\rowcolor{RTTerracotta}
+\textcolor{white}{\textbf{Nombre}} &
+\textcolor{white}{\textbf{Cargo}} &
+\textcolor{white}{\textbf{Correo}} &
+\textcolor{white}{\textbf{Teléfono}}\\
+\rule{0pt}{0.75cm}\hrulefill & \hrulefill & \hrulefill & \hrulefill \\
+\end{tabularx}
+
+\section{Emisión del aval}
+
+\vspace{0.85cm}
+\noindent
+\begin{tabularx}{\textwidth}{Y Y}
+\centering\rule{5.7cm}{0.4pt} & \centering\arraybackslash\rule{5.7cm}{0.4pt}\\
+\centering Firma de la autoridad competente & \centering\arraybackslash Sello institucional\\[6pt]
+\centering Nombre: \rule{3.4cm}{0.4pt} & \centering\arraybackslash Fecha: \rule{3.4cm}{0.4pt}\\[6pt]
+\centering Cargo: \rule{3.7cm}{0.4pt} & \centering\arraybackslash Unidad: \rule{3.3cm}{0.4pt}
+\end{tabularx}
+
+\end{document}

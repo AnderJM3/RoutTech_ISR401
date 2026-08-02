@@ -1,0 +1,297 @@
+\documentclass[10pt,a4paper]{article}
+
+% ============================================================
+% A3 - CONSENTIMIENTO INFORMADO ROUTTECH
+% Documento autocontenido y compatible con pdfLaTeX en Overleaf.
+% No requiere archivos .sty, configuracion.tex ni subcarpetas.
+% ============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,top=1.85cm,bottom=1.8cm,left=1.9cm,right=1.9cm,headheight=20pt]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx,array,booktabs,colortbl,longtable}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{tikz}
+\usepackage{ragged2e}
+\usepackage{amssymb}
+
+% ---------- PALETA PROPIA ROUTTECH ----------
+\definecolor{RTForest}{HTML}{25463B}
+\definecolor{RTTerracotta}{HTML}{B45F45}
+\definecolor{RTGold}{HTML}{D5A64A}
+\definecolor{RTCream}{HTML}{F7F2E8}
+\definecolor{RTLight}{HTML}{EEF3F0}
+\definecolor{RTGray}{HTML}{4D5652}
+\definecolor{RTRed}{HTML}{A23B3B}
+
+% ---------- DATOS DEL DOCUMENTO ----------
+\newcommand{\Proyecto}{RoutTech: Sistema de Movilidad Colaborativa para la Comunidad Universitaria de la UTEQ}
+\newcommand{\Asignatura}{ISR-401 -- Ingeniería de Requisitos}
+\newcommand{\Periodo}{2026--2027 PPA}
+\newcommand{\CategoriaEtica}{Categoría B -- Datos personales}
+\newcommand{\Repositorio}{https://github.com/AnderJM3/RoutTech_ISR401}
+\newcommand{\FechaDocumento}{29 de julio de 2026}
+\newcommand{\VersionDocumento}{2.0}
+\newcommand{\Paralelo}{Cuarto nivel -- Software B}
+\newcommand{\EstadoDocumento}{Versión 2.0 para revisión ética y aplicación}
+
+\newcommand{\Docente}{Ing. Gleiston Guerrero Ulloa, PhD}
+\newcommand{\CorreoDocente}{gguerrero@uteq.edu.ec}
+
+\newcommand{\Anderson}{NARANJO FLORES ANDERSON JEAMPIERE}
+\newcommand{\CedulaAnderson}{1207412659}
+\newcommand{\MatriculaAnderson}{617251}
+\newcommand{\CorreoAnderson}{anaranjof2@uteq.edu.ec}
+
+\newcommand{\Mayra}{CORDOVA CARREÑO MAYRA LUCILA}
+\newcommand{\CedulaMayra}{0969483943}
+\newcommand{\MatriculaMayra}{617891}
+\newcommand{\CorreoMayra}{mcordovac2@uteq.edu.ec}
+
+% ---------- TABLAS ----------
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.22}
+\setlength{\tabcolsep}{4.5pt}
+
+% ---------- ENCABEZADO Y PIE ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{UTEQ | FCC | ISR-401}}
+\fancyhead[R]{\small\textbf{A3 -- Consentimiento informado}}
+\fancyfoot[L]{\small Paquete ético RoutTech}
+\fancyfoot[R]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{RTTerracotta}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{RTGold}\leaders\hrule height \footrulewidth\hfill}}
+
+% ---------- TÍTULOS ----------
+\titleformat{\section}
+  {\large\bfseries\color{RTForest}}
+  {\thesection.}{0.45em}{}
+  [\vspace{1pt}\color{RTGold}\titlerule]
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{RTTerracotta}}
+  {\thesubsection}{0.45em}{}
+\titlespacing*{\section}{0pt}{0.75em}{0.35em}
+\titlespacing*{\subsection}{0pt}{0.55em}{0.25em}
+
+% ---------- CAJAS ----------
+\newtcolorbox{InfoBox}[1][]{
+  enhanced,breakable,
+  colback=RTLight,colframe=RTForest,
+  boxrule=0.8pt,arc=2mm,
+  left=2.6mm,right=2.6mm,top=1.6mm,bottom=1.6mm,
+  title=#1,fonttitle=\bfseries,coltitle=white,
+  colbacktitle=RTForest
+}
+\newtcolorbox{ConsentBox}[1][]{
+  enhanced,breakable,
+  colback=RTCream,colframe=RTTerracotta,
+  boxrule=0.8pt,arc=2mm,
+  left=2.6mm,right=2.6mm,top=1.6mm,bottom=1.6mm,
+  title=#1,fonttitle=\bfseries,coltitle=white,
+  colbacktitle=RTTerracotta
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=RTForest,
+  urlcolor=RTTerracotta,
+  pdftitle={A3 Consentimiento Informado RoutTech},
+  pdfauthor={Equipo RoutTech}
+}
+\urlstyle{same}
+\setlength{\parindent}{1.1em}
+\setlength{\parskip}{2.5pt}
+\setstretch{1.10}
+\setlist[itemize]{leftmargin=1.35em,itemsep=1pt,topsep=2pt}
+
+\begin{document}
+\justifying
+
+% ======================= PORTADA =======================
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[RTForest] (current page.north west) rectangle ([yshift=-4.6cm]current page.north east);
+  \fill[RTTerracotta] ([yshift=-4.6cm]current page.north west) rectangle ([yshift=-4.95cm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{0.65cm}
+\begin{center}
+{\color{white}\Large\bfseries UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}
+
+\vspace{1.75cm}
+{\large\bfseries\color{RTForest} Facultad de Ciencias de la Computación\\[4pt]}
+{\normalsize\color{RTGray} Carrera de Ingeniería de Software}
+
+\vspace{0.8cm}
+
+{\Huge\bfseries\color{RTForest} CONSENTIMIENTO INFORMADO\\[8pt]}
+{\Large\bfseries\color{RTTerracotta} A3 -- Participantes mayores de edad}
+
+\vspace{1.0cm}
+
+\begin{tcolorbox}[width=0.90\textwidth,colback=RTCream,colframe=RTGold,boxrule=1pt,arc=2mm]
+\centering
+{\large\bfseries \Proyecto}\\[7pt]
+\textbf{Clasificación ética:} \CategoriaEtica\\
+\textbf{Asignatura:} \Asignatura\\
+\textbf{Periodo académico:} \Periodo
+\end{tcolorbox}
+
+\vfill
+\begin{tabular}{rl}
+\textbf{Documento:} & A3 -- Consentimiento informado\\
+\textbf{Versión:} & \VersionDocumento\\
+\textbf{Estado:} & \EstadoDocumento\\
+\textbf{Repositorio:} & \href{\Repositorio}{RoutTech\_ISR401}\\
+\textbf{Fecha:} & \FechaDocumento
+\end{tabular}
+
+\vspace{0.75cm}
+{\small Quevedo -- Los Ríos -- Ecuador}
+\end{center}
+\clearpage
+
+% ======================= CONTENIDO =======================
+\begin{ConsentBox}[Aplicación de este documento]
+Este consentimiento está dirigido únicamente a personas mayores de edad. La participación de menores no forma parte de esta fase del proyecto. El documento debe explicarse antes de iniciar cualquier entrevista, encuesta, observación registrada o sesión de validación.
+\end{ConsentBox}
+
+\section{Información general del estudio}
+
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{@{}L{4.45cm} Y@{}}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Campo}} & \textcolor{white}{\textbf{Información}}\\
+Proyecto & \Proyecto.\\
+Docente responsable & \Docente. Los datos de contacto constan en la sección 8.\\
+Equipo investigador & \Anderson\ y \Mayra.\\
+Paralelo & \Paralelo.\\
+Actividad posible & Entrevista semiestructurada, cuestionario, observación no participante o sesión de validación de requisitos y prototipos.\\
+Duración estimada & Entre 15 y 30 minutos, según la técnica aplicada.\\
+Repositorio del proyecto & \href{\Repositorio}{RoutTech\_ISR401}. En este espacio solo deben publicarse documentos y datos anonimizados.\\
+\end{tabularx}
+
+\section{Propósito de la participación}
+
+La investigación busca identificar necesidades, dificultades, expectativas y criterios de aceptación relacionados con la movilidad colaborativa dentro de la comunidad universitaria de la UTEQ. La información obtenida servirá para especificar y validar requisitos de software de RoutTech, incluyendo funciones de publicación y búsqueda de rutas, reserva de cupos, coordinación de puntos de encuentro, seguridad, privacidad y explicación de recomendaciones de rutas.
+
+\section{Procedimiento}
+
+Según la actividad en la que participe, se le podrán formular preguntas sobre sus experiencias generales de traslado, medios de transporte utilizados, dificultades de movilidad, condiciones de confianza, seguridad, coordinación y funcionalidades esperadas. También se le podrá solicitar revisar historias de usuario, requisitos o mockups y expresar si los comprende o considera adecuados.
+
+No se solicitarán contraseñas, credenciales institucionales, placas vehiculares reales, direcciones domiciliarias exactas, datos bancarios ni seguimiento de geolocalización en tiempo real. El participante puede abstenerse de responder cualquier pregunta.
+
+\section{Riesgos previsibles}
+
+El estudio no implica pruebas físicas, médicas ni psicológicas. Los riesgos se consideran mínimos; sin embargo, algunas preguntas podrían producir incomodidad o preocupación al tratar experiencias de inseguridad, movilidad o privacidad. También existe un riesgo limitado de identificación accidental si se divulgaran grabaciones o datos personales. Para reducirlo, la información será codificada, minimizada y utilizada únicamente con fines académicos.
+
+\section{Beneficios}
+
+No se garantiza un beneficio personal directo ni se ofrece compensación económica. Como beneficio indirecto, la participación puede contribuir a una especificación de software más alineada con las necesidades de la comunidad universitaria y al desarrollo de conocimiento académico sobre movilidad colaborativa.
+
+\section{Confidencialidad y tratamiento de datos}
+
+Los datos personales se tratarán conforme a la normativa ecuatoriana aplicable. El nombre del participante será sustituido por un código, por ejemplo \texttt{EV-ENT-001}. Los resultados se presentarán de manera agregada o anonimizada y no se publicarán domicilios, rutas individuales, placas, números de cédula ni información que permita identificar directamente al participante.
+
+Los consentimientos firmados y las grabaciones identificables no se publicarán en GitHub. Permanecerán bajo custodia del equipo investigador en almacenamiento local protegido y con acceso limitado a Anderson Naranjo, Mayra Cordova y el docente responsable. Los datos identificables se conservarán hasta por 24 meses después del cierre académico del proyecto y luego se eliminarán de forma segura, salvo obligación institucional distinta.
+
+\section{Participación voluntaria y retiro}
+
+La participación es completamente voluntaria. Negarse a participar, no responder una pregunta o retirarse no generará consecuencias académicas, laborales ni personales. El participante podrá solicitar el retiro de sus datos identificables mientras todavía sea posible relacionarlos con su identidad. Una vez que los resultados hayan sido anonimizados e integrados de forma agregada, puede no ser técnicamente posible retirarlos de análisis ya consolidados.
+
+\section{Contacto para consultas}
+
+\rowcolors{2}{RTCream}{white}
+\noindent\begin{tabularx}{\textwidth}{@{}L{4.55cm} Y@{}}
+\rowcolor{RTTerracotta}
+\textcolor{white}{\textbf{Responsable}} & \textcolor{white}{\textbf{Datos de contacto}}\\
+Docente responsable & \Docente\ -- \href{mailto:\CorreoDocente}{\CorreoDocente}.\\
+Líder del equipo & \Anderson\ -- \href{mailto:\CorreoAnderson}{\CorreoAnderson}.\\
+Responsable de trabajo de campo & \Mayra\ -- \href{mailto:\CorreoMayra}{\CorreoMayra}.\\
+\end{tabularx}
+
+\section{Declaración de consentimiento}
+
+\begin{InfoBox}[Declaración del participante]
+Declaro que soy mayor de edad, que he leído o recibido una explicación clara de este documento, que tuve la oportunidad de formular preguntas y que mis dudas fueron atendidas. Comprendo el propósito, las actividades, los riesgos previsibles, el manejo de la información y mi derecho a retirarme. Acepto participar libremente en las condiciones que marco a continuación.
+\end{InfoBox}
+
+\subsection{Autorizaciones independientes}
+
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{@{}Y C{1.55cm} C{1.55cm}@{}}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Autorización}} &
+\textcolor{white}{\textbf{Sí}} &
+\textcolor{white}{\textbf{No}}\\
+Participar en la actividad de investigación descrita. & $\square$ & $\square$ \\
+Permitir la grabación de audio durante la sesión. & $\square$ & $\square$ \\
+Permitir la grabación de video e imagen durante la sesión. & $\square$ & $\square$ \\
+Permitir fotografías del contexto de aplicación, sin publicar datos identificables. & $\square$ & $\square$ \\
+Permitir el uso de información anonimizada en informes, repositorios académicos o publicaciones científicas. & $\square$ & $\square$ \\
+Recibir una copia de este consentimiento. & $\square$ & $\square$ \\
+\end{tabularx}
+
+\begin{ConsentBox}[Condición importante]
+La negativa a autorizar audio, video o fotografías no impide participar mediante una modalidad que no requiera ese registro. La autorización para publicar información anonimizada no incluye permiso para publicar el nombre, la cédula, la firma, la voz o la imagen identificable.
+\end{ConsentBox}
+
+\subsection{Datos del participante}
+
+\noindent\begin{tabularx}{\textwidth}{@{}L{4.7cm} Y@{}}
+\toprule
+\textbf{Dato} & \textbf{Completar}\\
+\midrule
+Código asignado al participante & \rule{0.92\linewidth}{0.4pt}\\[5pt]
+Nombre completo & \rule{0.92\linewidth}{0.4pt}\\[5pt]
+Cédula de ciudadanía & \rule{0.92\linewidth}{0.4pt}\\[5pt]
+Perfil de participación & $\square$ Estudiante \quad $\square$ Conductor potencial \quad $\square$ Docente \quad $\square$ Administrativo \quad $\square$ Otro\\[5pt]
+Correo o teléfono de contacto (opcional) & \rule{0.92\linewidth}{0.4pt}\\[5pt]
+Fecha de participación & \rule{2.0cm}{0.4pt} / \rule{2.0cm}{0.4pt} / \rule{2.8cm}{0.4pt}\\
+\bottomrule
+\end{tabularx}
+
+\subsection{Firmas}
+
+\vspace{0.8cm}
+\noindent\begin{tabularx}{\textwidth}{@{}Y Y@{}}
+\centering\rule{0.84\linewidth}{0.4pt} & \centering\arraybackslash\rule{0.84\linewidth}{0.4pt}\\
+\centering Firma del participante & \centering\arraybackslash Firma del investigador que obtiene el consentimiento\\[4pt]
+\centering Nombre: \rule{0.58\linewidth}{0.4pt} & \centering\arraybackslash Nombre: \rule{0.58\linewidth}{0.4pt}\\[4pt]
+\centering Fecha: \rule{0.48\linewidth}{0.4pt} & \centering\arraybackslash Fecha: \rule{0.48\linewidth}{0.4pt}
+\end{tabularx}
+
+\vspace{0.9cm}
+\noindent\begin{tabularx}{\textwidth}{@{}Y Y@{}}
+\textbf{Testigo, si corresponde:} \hrulefill & \textbf{Firma:} \hrulefill \\
+\addlinespace[0.8cm]
+\textbf{Motivo de la intervención del testigo:} & \rule{0.85\linewidth}{0.4pt}
+\end{tabularx}
+
+\section{Constancia del investigador}
+
+La persona investigadora que firma este documento declara que explicó el estudio en lenguaje comprensible, verificó que la decisión fuera voluntaria, respondió las preguntas planteadas y entregó o puso a disposición del participante una copia del consentimiento cuando fue solicitada.
+
+\vfill
+\begin{center}
+{\small Documento A3 -- Versión \VersionDocumento\ -- \FechaDocumento}
+\end{center}
+
+\end{document}

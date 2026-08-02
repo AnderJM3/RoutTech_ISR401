@@ -1,0 +1,249 @@
+\documentclass[10pt,a4paper]{article}
+
+% ============================================================
+% A10 - CRONOGRAMA DETALLADO DEL PROYECTO ROUTTECH
+% Documento autocontenido y compatible con pdfLaTeX en Overleaf.
+% ============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,top=1.85cm,bottom=1.8cm,left=1.9cm,right=1.9cm,headheight=20pt]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx,array,booktabs,colortbl,multirow}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{tikz}
+\usepackage{ragged2e}
+\usepackage{pdflscape}
+
+% ---------- PALETA ROUTTECH ----------
+\definecolor{RTForest}{HTML}{25463B}
+\definecolor{RTTerracotta}{HTML}{B45F45}
+\definecolor{RTGold}{HTML}{D5A64A}
+\definecolor{RTCream}{HTML}{F7F2E8}
+\definecolor{RTLight}{HTML}{EEF3F0}
+\definecolor{RTGray}{HTML}{4D5652}
+\definecolor{RTGreen}{HTML}{3F7D5A}
+
+% ---------- DATOS DEL DOCUMENTO ----------
+\newcommand{\Proyecto}{RoutTech: Sistema de Movilidad Colaborativa para la Comunidad Universitaria de la UTEQ}
+\newcommand{\Asignatura}{ISR-401 -- Ingeniería de Requisitos}
+\newcommand{\Periodo}{2026--2027 PPA}
+\newcommand{\CategoriaEtica}{Categoría B -- Datos personales}
+\newcommand{\Repositorio}{https://github.com/AnderJM3/RoutTech_ISR401}
+\newcommand{\FechaDocumento}{29 de julio de 2026}
+\newcommand{\VersionDocumento}{2.0}
+\newcommand{\Paralelo}{Cuarto nivel -- Software B}
+\newcommand{\Anderson}{NARANJO FLORES ANDERSON JEAMPIERE}
+\newcommand{\Mayra}{CORDOVA CARREÑO MAYRA LUCILA}
+
+% ---------- TABLAS ----------
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.20}
+\setlength{\tabcolsep}{4.4pt}
+
+% ---------- ENCABEZADO Y PIE ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{UTEQ | FCC | ISR-401}}
+\fancyhead[R]{\small\textbf{A10 -- Cronograma Gantt}}
+\fancyfoot[L]{\small Paquete ético RoutTech}
+\fancyfoot[R]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{RTTerracotta}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{RTGold}\leaders\hrule height \footrulewidth\hfill}}
+
+% ---------- TÍTULOS ----------
+\titleformat{\section}
+  {\large\bfseries\color{RTForest}}
+  {\thesection.}{0.45em}{}
+  [\vspace{1pt}\color{RTGold}\titlerule]
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{RTTerracotta}}
+  {\thesubsection}{0.45em}{}
+\titlespacing*{\section}{0pt}{0.75em}{0.35em}
+\titlespacing*{\subsection}{0pt}{0.55em}{0.25em}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=RTForest,
+  urlcolor=RTTerracotta,
+  pdftitle={A10 Cronograma Gantt RoutTech},
+  pdfauthor={Equipo RoutTech}
+}
+\urlstyle{same}
+\setlength{\parindent}{1.1em}
+\setlength{\parskip}{2.5pt}
+\setstretch{1.10}
+\hbadness=10000
+
+% Bloques del Gantt
+\newcommand{\Plan}{\cellcolor{RTForest!88}\phantom{\textbf{X}}}
+\newcommand{\Shared}{\cellcolor{RTGold!78}\phantom{\textbf{X}}}
+\newcommand{\Milestone}{\cellcolor{RTTerracotta}\textcolor{white}{\textbf{H}}}
+\newcommand{\Review}{\cellcolor{RTGreen!85}\textcolor{white}{\textbf{R}}}
+
+\begin{document}
+\justifying
+
+% ======================= PORTADA =======================
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[RTForest] (current page.north west) rectangle ([yshift=-4.6cm]current page.north east);
+  \fill[RTTerracotta] ([yshift=-4.6cm]current page.north west) rectangle ([yshift=-4.95cm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{0.65cm}
+\begin{center}
+{\color{white}\Large\bfseries UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}
+
+\vspace{1.75cm}
+{\large\bfseries\color{RTForest} Facultad de Ciencias de la Computación\\[4pt]}
+{\normalsize\color{RTGray} Carrera de Ingeniería de Software}
+
+\vspace{0.8cm}
+
+{\Huge\bfseries\color{RTForest} CRONOGRAMA DETALLADO\\[8pt]}
+{\Large\bfseries\color{RTTerracotta} A10 -- Diagrama Gantt semanal}
+
+\vspace{1.0cm}
+
+\begin{minipage}{0.90\textwidth}
+\centering
+\setlength{\fboxsep}{10pt}
+\colorbox{RTCream}{%
+\parbox{0.88\textwidth}{
+\centering
+{\large\bfseries \Proyecto}\\[7pt]
+\textbf{Clasificación ética:} \CategoriaEtica\\
+\textbf{Asignatura:} \Asignatura\\
+\textbf{Periodo académico:} \Periodo
+}}
+\end{minipage}
+
+\vfill
+\begin{tabular}{rl}
+\textbf{Documento:} & A10 -- Cronograma detallado del proyecto\\
+\textbf{Versión:} & \VersionDocumento\\
+\textbf{Estado:} & Versión 2.0 para revisión\\
+\textbf{Paralelo:} & \Paralelo\\
+\textbf{Repositorio:} & \href{\Repositorio}{RoutTech\_ISR401}\\
+\textbf{Fecha:} & \FechaDocumento
+\end{tabular}
+
+\vspace{0.75cm}
+{\small Quevedo -- Los Ríos -- Ecuador}
+\end{center}
+\clearpage
+
+% ======================= RESUMEN =======================
+\section{Finalidad y criterios de planificación}
+
+El cronograma organiza las actividades académicas, técnicas y éticas de RoutTech durante las diecisiete semanas del periodo 2026--2027 PPA. La planificación mantiene los cuatro hitos oficiales del Proyecto Formativo de Curso: Entrega 1A en la semana 4, Entrega 1B en la semana 10, Entrega 2A en la semana 13 y Entrega 2B/Defensa en la semana 17. Las entrevistas, encuestas y observaciones se ejecutan únicamente con autorización institucional y consentimiento informado previo.
+
+\section{Hitos, fechas y productos}
+
+{\small
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{L{3.25cm} C{1.55cm} C{3.35cm} Y}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Hito}} &
+\textcolor{white}{\textbf{Semana}} &
+\textcolor{white}{\textbf{Fecha}} &
+\textcolor{white}{\textbf{Actividad y producto}}\\
+Inicio del periodo & 1 & 04/05/2026 & Conformación del equipo actual, delimitación del proyecto y planificación inicial.\\
+Entrega 1A & 4 & 31/05/2026 & Planificación, instrumentos preliminares, revisión documental y primeros artefactos de elicitación.\\
+Preparación y pilotaje & 4--6 & 25/05/2026 al 14/06/2026 & Revisión docente, pilotaje interno de entrevista y encuesta, corrección de instrumentos y organización del paquete ético.\\
+Aprobación ética y avales & 6--7 & 08/06/2026 al 21/06/2026 & Tramitación de avales, preparación de consentimientos y control de requisitos éticos previos al trabajo de campo.\\
+Trabajo de campo & 7--13 & 15/06/2026 al 02/08/2026 & Aplicación de entrevistas, cuestionario, observación y resguardo de evidencias autorizadas.\\
+Entrega 1B & 10 & 12/07/2026 & ERS/SRS parcial, evidencias iniciales, trazabilidad preliminar y revisión ética intermedia.\\
+Entrega 2A & 13 & 02/08/2026 & ERS/SRS completa, análisis de datos, UML, trazabilidad y borrador de manuscrito.\\
+Validación de mockups & 13--16 & 27/07/2026 al 23/08/2026 & Walkthrough por roles, validación de requisitos y correcciones de interfaz y especificación.\\
+Entrega 2B / Defensa & 17 & 30/08/2026 & Defensa, cierre, publicación controlada de artefactos y versión final del proyecto.\\
+Cierre del periodo & 17 & 30/08/2026 & Cierre académico, respaldo final y programación de retención de datos conforme al A4.\\
+\end{tabularx}
+}
+
+\section{Responsables principales}
+
+{\small
+\rowcolors{2}{RTCream}{white}
+\noindent\begin{tabularx}{\textwidth}{L{4.65cm} Y}
+\rowcolor{RTTerracotta}
+\textcolor{white}{\textbf{Responsable}} & \textcolor{white}{\textbf{Funciones dentro del cronograma}}\\
+\Mayra & Trabajo de campo, aplicación y control de instrumentos, evidencias, codificación temática, análisis del cuestionario, requisitos, validación y componente experimental.\\
+\Anderson & Coordinación general, paquete ético, LaTeX, GitHub, modelado UML, trazabilidad, integración del ERS/SRS, MVP, manuscrito y preparación de entregas.\\
+Ambos integrantes & Planificación, revisiones éticas, decisiones de alcance, control de calidad, defensa y cierre del proyecto.\\
+\end{tabularx}
+}
+
+\clearpage
+
+% ======================= GANTT =======================
+\begin{landscape}
+\thispagestyle{fancy}
+\section{Cronograma Gantt semanal -- semanas 1 a 17}
+
+\begin{center}
+\fontsize{6}{7}\selectfont
+\setlength{\tabcolsep}{1.7pt}
+\renewcommand{\arraystretch}{1.18}
+\rowcolors{3}{RTLight}{white}
+\begin{tabular}{|L{5.25cm}|L{3.35cm}|*{17}{C{0.65cm}|}}
+\hline
+\rowcolor{RTForest}
+\multicolumn{1}{|c|}{\textcolor{white}{\textbf{Actividad}}} &
+\multicolumn{1}{c|}{\textcolor{white}{\textbf{Responsable}}} &
+\multicolumn{17}{c|}{\textcolor{white}{\textbf{Semana del periodo académico}}}\\
+\cline{3-19}
+\rowcolor{RTCream}
+ & & \textbf{1}&\textbf{2}&\textbf{3}&\textbf{4}&\textbf{5}&\textbf{6}&\textbf{7}&\textbf{8}&\textbf{9}&\textbf{10}&\textbf{11}&\textbf{12}&\textbf{13}&\textbf{14}&\textbf{15}&\textbf{16}&\textbf{17}\\
+\hline
+Conformación del equipo y delimitación del proyecto & Ambos & \Plan & & & & & & & & & & & & & & & & \\ \hline
+Identificación de stakeholders y alcance & Ambos & \Plan & \Plan & & & & & & & & & & & & & & & \\ \hline
+Revisión documental y planificación de elicitación & Ambos & \Plan & \Plan & \Plan & & & & & & & & & & & & & & \\ \hline
+Preparación del paquete ético A1--A12 y B1--B4 & Anderson & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & & & & & & & & & & & \\ \hline
+Diseño, revisión y pilotaje de instrumentos & Mayra & & & \Plan & \Plan & \Plan & \Plan & & & & & & & & & & & \\ \hline
+Gestión de avales y aprobación ética & Ambos & & & & & \Plan & \Plan & \Plan & & & & & & & & & & \\ \hline
+Consentimientos y control previo de participantes & Mayra & & & & & & & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & & & & \\ \hline
+Aplicación de 16 entrevistas semiestructuradas & Mayra & & & & & & & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & & & & \\ \hline
+Aplicación y seguimiento del cuestionario & Mayra & & & & & & & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & & & & \\ \hline
+Observación no participante de movilidad & Mayra & & & & & & & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & & & & \\ \hline
+Anonimización, depuración y catálogo de evidencias & Ambos & & & & & & & & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & & & & \\ \hline
+Codificación temática y análisis cuantitativo & Mayra & & & & & & & & & \Plan & \Plan & \Plan & \Plan & \Plan & & & & \\ \hline
+Especificación y actualización del ERS/SRS & Ambos & & & & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & & & & \\ \hline
+Modelado UML y matriz de trazabilidad & Anderson & & & & & & & & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & & & \\ \hline
+Diseño y ajuste de mockups & Anderson & & & & & & & & & & \Plan & \Plan & \Plan & \Plan & \Plan & & & \\ \hline
+Walkthrough y validación con stakeholders & Ambos & & & & & & & & & & & & & \Plan & \Plan & \Plan & \Plan & \\ \hline
+Diseño, desarrollo y verificación del MVP & Anderson & & & & & & & & & & & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & \\ \hline
+Protocolo experimental y análisis de resultados & Mayra & & & & & & & & & & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & & \\ \hline
+Preparación del manuscrito y divulgación & Anderson & & & & & & & & & & & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan & \Plan \\ \hline
+Revisión ética intermedia y control de incidentes & Ambos & & & & & & & & & & \Review & & & \Review & & & & \\ \hline
+Integración, control de calidad y defensa & Ambos & & & & & & & & & & & & & & & & \Plan & \Plan \\ \hline
+\rowcolor{RTCream}\textbf{Entrega 1A} & \textbf{Ambos} & & & & \Milestone & & & & & & & & & & & & & \\ \hline
+\rowcolor{RTCream}\textbf{Entrega 1B} & \textbf{Ambos} & & & & & & & & & & \Milestone & & & & & & & \\ \hline
+\rowcolor{RTCream}\textbf{Entrega 2A} & \textbf{Ambos} & & & & & & & & & & & & & \Milestone & & & & \\ \hline
+\rowcolor{RTCream}\textbf{Entrega 2B / Defensa} & \textbf{Ambos} & & & & & & & & & & & & & & & & & \Milestone \\ \hline
+\end{tabular}
+\end{center}
+
+\vspace{0.25cm}
+{\footnotesize
+\textbf{Leyenda:} \colorbox{RTForest!88}{\phantom{XX}} actividad programada; \colorbox{RTGreen!85}{\textcolor{white}{\textbf{R}}} revisión ética intermedia; \colorbox{RTTerracotta}{\textcolor{white}{\textbf{H}}} hito oficial del PFC.\\
+\textbf{Semanas clave:} S1 inicia el 04/05/2026; S4 finaliza el 31/05/2026; S10 finaliza el 12/07/2026; S13 finaliza el 02/08/2026; S17 finaliza el 30/08/2026.
+}
+\end{landscape}
+
+\end{document}

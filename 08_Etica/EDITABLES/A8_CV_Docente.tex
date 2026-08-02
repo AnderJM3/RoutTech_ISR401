@@ -1,0 +1,201 @@
+\documentclass[10pt,a4paper]{article}
+
+% ============================================================
+% A8 - CV ETICO RESUMIDO DEL DOCENTE RESPONSABLE
+% Documento autocontenido y compatible con pdfLaTeX en Overleaf.
+% ============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,top=1.45cm,bottom=1.45cm,left=1.75cm,right=1.75cm,headheight=20pt]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx,array,booktabs,colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{tikz}
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+
+% ---------- PALETA ROUTTECH ----------
+\definecolor{RTForest}{HTML}{25463B}
+\definecolor{RTTerracotta}{HTML}{B45F45}
+\definecolor{RTGold}{HTML}{D5A64A}
+\definecolor{RTCream}{HTML}{F7F2E8}
+\definecolor{RTLight}{HTML}{EEF3F0}
+\definecolor{RTGray}{HTML}{4D5652}
+
+% ---------- DATOS DEL DOCUMENTO ----------
+\newcommand{\Proyecto}{RoutTech: Sistema de Movilidad Colaborativa para la Comunidad Universitaria de la UTEQ}
+\newcommand{\Asignatura}{ISR-401 -- Ingeniería de Requisitos}
+\newcommand{\Periodo}{2026--2027 PPA}
+\newcommand{\FechaDocumento}{29 de julio de 2026}
+\newcommand{\VersionDocumento}{2.0}
+\newcommand{\Repositorio}{https://github.com/AnderJM3/RoutTech_ISR401}
+
+% ---------- DATOS DEL DOCENTE ----------
+\newcommand{\NombreDocente}{Ing. Gleiston Cicerón Guerrero Ulloa, PhD}
+\newcommand{\CorreoDocente}{gguerrero@uteq.edu.ec}
+\newcommand{\ORCIDDocente}{0000-0001-5990-2357}
+\newcommand{\EnlaceORCID}{https://orcid.org/0000-0001-5990-2357}
+
+% ---------- TABLAS ----------
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.12}
+\setlength{\tabcolsep}{4.2pt}
+
+% ---------- ENCABEZADO Y PIE ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{UTEQ | FCC | ISR-401}}
+\fancyhead[R]{\small\textbf{A8 -- CV del docente}}
+\fancyfoot[L]{\small Paquete ético RoutTech}
+\fancyfoot[R]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{RTTerracotta}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{RTGold}\leaders\hrule height \footrulewidth\hfill}}
+
+% ---------- TÍTULOS ----------
+\titleformat{\section}
+  {\normalsize\bfseries\color{RTForest}}
+  {}{0pt}{}
+  [\vspace{1pt}\color{RTGold}\titlerule]
+\titlespacing*{\section}{0pt}{0.55em}{0.25em}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=RTForest,
+  urlcolor=RTTerracotta,
+  citecolor=RTForest,
+  pdftitle={A8 CV etico resumido del docente responsable},
+  pdfauthor={Gleiston Ciceron Guerrero Ulloa}
+}
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.2pt}
+\setstretch{1.04}
+\setlist[itemize]{leftmargin=1.35em,itemsep=0.5pt,topsep=1pt,parsep=0pt}
+\setlist[enumerate]{leftmargin=1.6em,itemsep=0.5pt,topsep=1pt,parsep=0pt}
+
+\begin{document}
+\justifying
+
+% ======================= CABECERA PRINCIPAL =======================
+\thispagestyle{fancy}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[RTForest] (current page.north west) rectangle ([yshift=-2.70cm]current page.north east);
+  \fill[RTTerracotta] ([yshift=-2.70cm]current page.north west) rectangle ([yshift=-2.95cm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{-0.45cm}
+\begin{center}
+{\color{white}\Large\bfseries UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}\\[3pt]
+{\color{white}\normalsize Facultad de Ciencias de la Computación -- Carrera de Ingeniería de Software}
+\end{center}
+
+\vspace{0.65cm}
+\begin{center}
+{\LARGE\bfseries\color{RTForest} CV ÉTICO RESUMIDO DEL DOCENTE RESPONSABLE}\\[4pt]
+{\large\bfseries\color{RTTerracotta} A8 -- Paquete de aprobación ética}
+\end{center}
+
+\vspace{0.25cm}
+\rowcolors{2}{RTLight}{white}
+\begin{tabularx}{\dimexpr\textwidth-15pt\relax}{@{}L{4.0cm} Y@{}}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Campo}} & \textcolor{white}{\textbf{Información}}\\
+Nombre completo & \NombreDocente.\\
+Afiliación & Universidad Técnica Estatal de Quevedo (UTEQ), Ecuador.\\
+Correo institucional & \href{mailto:\CorreoDocente}{\CorreoDocente}.\\
+ORCID & \href{\EnlaceORCID}{\ORCIDDocente}.\\
+Rol en el proyecto & Docente responsable y supervisor académico del PFC RoutTech.\\
+Proyecto asociado & \Proyecto.\\
+Documento & Versión \VersionDocumento, \FechaDocumento; estado: para revisión y firma del docente.\\
+Repositorio académico & \url{\Repositorio}.\\
+\end{tabularx}
+
+\section{Perfil profesional}
+
+Docente e investigador en el ámbito de las Tecnologías de la Información y la Comunicación, con experiencia en Ingeniería de Software, desarrollo de aplicaciones, sistemas basados en Internet de las Cosas (IoT), metodologías ágiles y validación de soluciones tecnológicas. Su registro ORCID informa vinculación docente con la UTEQ desde diciembre de 2001 y experiencia previa en la Universidad de Guayaquil entre 1998 y 2014 [1]. En RoutTech participa como responsable de la supervisión académica, metodológica y ética del proceso de Ingeniería de Requisitos.
+
+\section{Formación académica}
+
+\small
+\rowcolors{2}{RTLight}{white}
+\begin{tabularx}{\dimexpr\textwidth-15pt\relax}{@{}L{2.0cm} L{5.3cm} Y@{}}
+\rowcolor{RTTerracotta}
+\textcolor{white}{\textbf{Año}} & \textcolor{white}{\textbf{Título o formación}} & \textcolor{white}{\textbf{Institución}}\\
+2024 & Doctor en Tecnologías de la Información y la Comunicación & Universidad de Granada, España.\\
+2018 & Máster en Desarrollo de Software & Universidad de Granada, España.\\
+2009 & Máster en Administración de Empresas & ISEAD Business School, España.\\
+2009 & Diplomado en Diseños Pedagógicos Universitarios & Universidad Técnica Estatal de Quevedo, Ecuador.\\
+2007 & Diplomado en Pedagogía Universitaria & Universidad de Guayaquil, Ecuador.\\
+1998 & Ingeniero en Computación & Escuela Superior Politécnica del Litoral, Ecuador.\\
+\end{tabularx}
+\normalsize
+
+\section{Experiencia docente, investigadora y editorial}
+
+\begin{itemize}
+  \item \textbf{Universidad Técnica Estatal de Quevedo:} docente desde 2001, de acuerdo con el registro ORCID [1].
+  \item \textbf{Universidad de Guayaquil:} experiencia docente registrada para el periodo 1998--2014 [1].
+  \item \textbf{Actividad investigadora:} producción vinculada con desarrollo y análisis de software, IoT, aplicaciones inclusivas y metodologías de desarrollo, registrada en ORCID y en el portal institucional de investigación de la UTEQ [1], [2], [4]--[7].
+  \item \textbf{Actividad editorial:} revisor por pares de la revista científica-tecnológica InGenio de la UTEQ, según la conformación pública de su equipo editorial [3].
+  \item \textbf{Vinculación profesional:} miembro de IEEE, según el registro ORCID [1].
+\end{itemize}
+
+\section{Producción científica seleccionada, 2021--2025}
+
+\small
+\begin{enumerate}[label={\textbf{P\arabic*.}}]
+  \item ``Test-Driven Development Tool for IoT Systems,'' \emph{IEEE Software}, 2025. DOI: \href{https://doi.org/10.1109/MS.2024.3479880}{10.1109/MS.2024.3479880} [1], [7].
+  \item ``Validation of a development methodology and tool for IoT-based systems through a case study for visually impaired people,'' \emph{Internet of Things}, 2023. DOI: \href{https://doi.org/10.1016/j.iot.2023.100900}{10.1016/j.iot.2023.100900} [1], [4].
+  \item ``Agile Methodologies Applied to the Development of Internet of Things (IoT)-Based Systems: A Review,'' \emph{Sensors}, 2023. DOI: \href{https://doi.org/10.3390/s23020790}{10.3390/s23020790} [1], [5].
+  \item ``Development and Assessment of an Indoor Air Quality Control IoT-Based System,'' \emph{Electronics}, 2023. DOI: \href{https://doi.org/10.3390/electronics12030608}{10.3390/electronics12030608} [1], [2].
+  \item ``Internet of Things (IoT)-Based Indoor Plant Care System,'' \emph{Journal of Ambient Intelligence and Smart Environments}, 2023. DOI: \href{https://doi.org/10.3233/AIS-220483}{10.3233/AIS-220483} [1], [2].
+  \item \emph{Tecnologías para el desarrollo de aplicaciones web}. UTEQ, 2022. ISBN: 978-9942-33-543-2 [6].
+  \item ``Lineamientos para el diseño de aplicaciones de ingreso de texto para adultos mayores,'' \emph{Revista InGenio}, vol. 4, no. 2, pp. 1--15, 2021. DOI: \href{https://doi.org/10.18779/ingenio.v4i2.411}{10.18779/ingenio.v4i2.411} [1], [2].
+\end{enumerate}
+\normalsize
+
+\section{Competencia para la supervisión ética de RoutTech}
+
+La formación y experiencia descritas respaldan su participación en la revisión de instrumentos, trazabilidad de requisitos, integridad de la documentación, protección de datos personales, confidencialidad y uso responsable de tecnologías de recomendación. En el proyecto deberá verificar que la participación sea voluntaria, que el MVP utilice datos sintéticos y que los resultados públicos se presenten de manera anonimizada o agregada. La constancia o certificado específico de formación ética vigente se documentará en el Anexo A12, conforme a la estructura del paquete ético.
+
+\section{Declaración de veracidad y firma}
+
+Declaro que la información contenida en este CV resumido corresponde a mis antecedentes académicos y profesionales, y autorizo su incorporación al paquete de aprobación ética del proyecto RoutTech para fines exclusivamente académicos e institucionales.
+
+\vspace{0.65cm}
+\begin{tabularx}{\dimexpr\textwidth-15pt\relax}{@{}Y Y@{}}
+\centering\rule{6.0cm}{0.4pt} & \centering\arraybackslash\rule{6.0cm}{0.4pt}\\
+\centering \NombreDocente & \centering\arraybackslash Fecha\\
+\centering Docente responsable & \centering\arraybackslash Quevedo, Los Ríos, Ecuador
+\end{tabularx}
+
+\section{Fuentes de verificación}
+
+\begingroup
+\scriptsize
+\begin{enumerate}[label={\textbf{[\arabic*]}},leftmargin=1.55em,itemsep=1pt,topsep=1pt]
+  \item ORCID, ``Gleiston Guerrero-Ulloa (0000-0001-5990-2357),'' 2026. [En línea]. Disponible en: \url{https://orcid.org/0000-0001-5990-2357}. [Consultado: 23-jul-2026].
+  \item Universidad Técnica Estatal de Quevedo, ``Producción científica institucional: registros de Gleiston Cicerón Guerrero Ulloa,'' 2026. [En línea]. Disponible en: \url{https://www.uteq.edu.ec/es/investigacion}. [Consultado: 23-jul-2026].
+  \item Universidad Técnica Estatal de Quevedo, ``Equipo editorial de la revista InGenio,'' s. f. [En línea]. Disponible en: \url{https://revistas.uteq.edu.ec/index.php/ingenio/about/editorialTeam}. [Consultado: 23-jul-2026].
+  \item Universidad Técnica Estatal de Quevedo, ``Validation of a development methodology and tool for IoT-based systems through a case study for visually impaired people,'' 2023. [En línea]. Disponible en: \url{https://www.uteq.edu.ec/en/investigacion/articulo/2256}. [Consultado: 23-jul-2026].
+  \item Universidad Técnica Estatal de Quevedo, ``Agile methodologies applied to the development of Internet of Things (IoT)-based systems: A review,'' 2023. [En línea]. Disponible en: \url{https://www.uteq.edu.ec/en/investigacion/articulo/1324}. [Consultado: 23-jul-2026].
+  \item Universidad Técnica Estatal de Quevedo, ``Tecnologías para el desarrollo de aplicaciones web,'' 2022. [En línea]. Disponible en: \url{https://www.uteq.edu.ec/es/investigacion/libro/190}. [Consultado: 23-jul-2026].
+  \item Universidad Técnica Estatal de Quevedo, ``Test-driven development tool for IoT systems,'' 2025. [En línea]. Disponible en: \url{https://www.uteq.edu.ec/investigacion/articulo/3120}. [Consultado: 29-jul-2026].
+\end{enumerate}
+\endgroup
+
+\end{document}

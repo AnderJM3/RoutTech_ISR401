@@ -1,0 +1,182 @@
+\documentclass[10pt,a4paper]{article}
+
+% ============================================================
+% B4 - POLITICA DE MANEJO DE DATOS DE GEOLOCALIZACION
+% Documento autocontenido y compatible con pdfLaTeX en Overleaf.
+% ============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,top=1.85cm,bottom=1.8cm,left=1.9cm,right=1.9cm,headheight=20pt]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx,array,colortbl}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{tikz}
+\usepackage{ragged2e}
+
+% ---------- PALETA ROUTTECH ----------
+\definecolor{RTForest}{HTML}{25463B}
+\definecolor{RTTerracotta}{HTML}{B45F45}
+\definecolor{RTGold}{HTML}{D5A64A}
+\definecolor{RTCream}{HTML}{F7F2E8}
+\definecolor{RTLight}{HTML}{EEF3F0}
+\definecolor{RTGray}{HTML}{4D5652}
+
+% ---------- DATOS ----------
+\newcommand{\Proyecto}{RoutTech: Sistema de Movilidad Colaborativa para la Comunidad Universitaria de la UTEQ}
+\newcommand{\Asignatura}{ISR-401 -- Ingeniería de Requisitos}
+\newcommand{\Periodo}{2026--2027 PPA}
+\newcommand{\CategoriaEtica}{Categoría B -- Datos personales}
+\newcommand{\Repositorio}{https://github.com/AnderJM3/RoutTech_ISR401}
+\newcommand{\FechaDocumento}{29 de julio de 2026}
+\newcommand{\VersionDocumento}{2.0}
+\newcommand{\Paralelo}{Cuarto nivel -- Software B}
+\newcommand{\Mayra}{CORDOVA CARREÑO MAYRA LUCILA}
+\newcommand{\Anderson}{NARANJO FLORES ANDERSON JEAMPIERE}
+\newcommand{\Docente}{Ing. Gleiston Guerrero Ulloa, PhD}
+
+% ---------- TABLAS ----------
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.20}
+\setlength{\tabcolsep}{4.5pt}
+
+% ---------- ENCABEZADO Y PIE ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{UTEQ | FCC | ISR-401}}
+\fancyhead[R]{\small\textbf{B4 -- Política de geolocalización}}
+\fancyfoot[L]{\small Paquete ético RoutTech}
+\fancyfoot[R]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{RTTerracotta}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{RTGold}\leaders\hrule height \footrulewidth\hfill}}
+
+% ---------- TITULOS ----------
+\titleformat{\section}
+  {\large\bfseries\color{RTForest}}
+  {\thesection.}{0.45em}{}
+  [\vspace{1pt}\color{RTGold}\titlerule]
+\titlespacing*{\section}{0pt}{0.65em}{0.30em}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=RTForest,
+  urlcolor=RTTerracotta,
+  pdftitle={B4 Politica de Geolocalizacion RoutTech},
+  pdfauthor={Equipo RoutTech}
+}
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt}
+\setstretch{1.06}
+\setlist[enumerate]{leftmargin=1.55em,itemsep=2pt,topsep=2pt}
+
+\begin{document}
+\justifying
+
+% ======================= PORTADA =======================
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[RTForest] (current page.north west) rectangle ([yshift=-4.6cm]current page.north east);
+  \fill[RTTerracotta] ([yshift=-4.6cm]current page.north west) rectangle ([yshift=-4.95cm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{0.65cm}
+\begin{center}
+{\color{white}\Large\bfseries UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}
+
+\vspace{1.75cm}
+{\large\bfseries\color{RTForest} Facultad de Ciencias de la Computación\\[4pt]}
+{\normalsize\color{RTGray} Carrera de Ingeniería de Software}
+
+\vspace{0.8cm}
+
+{\Huge\bfseries\color{RTForest} POLÍTICA DE GEOLOCALIZACIÓN\\[8pt]}
+{\Large\bfseries\color{RTTerracotta} B4 -- Categoría B}
+
+\vspace{1.0cm}
+
+\begin{tcolorbox}[width=0.90\textwidth,colback=RTCream,colframe=RTGold,boxrule=1pt,arc=2mm]
+\centering
+{\large\bfseries \Proyecto}\\[7pt]
+\textbf{Clasificación ética:} \CategoriaEtica\\
+\textbf{Asignatura:} \Asignatura\\
+\textbf{Periodo académico:} \Periodo
+\end{tcolorbox}
+
+\vfill
+\begin{tabular}{rl}
+\textbf{Documento:} & B4 -- Política de manejo de datos de geolocalización\\
+\textbf{Versión:} & \VersionDocumento\\
+\textbf{Estado:} & Versión 2.0 para firma\\
+\textbf{Paralelo:} & \Paralelo\\
+\textbf{Repositorio:} & \href{\Repositorio}{RoutTech\_ISR401}\\
+\textbf{Fecha:} & \FechaDocumento
+\end{tabular}
+
+\vspace{0.75cm}
+{\small Quevedo -- Los Ríos -- Ecuador}
+\end{center}
+\clearpage
+
+% ======================= CONTENIDO =======================
+\section{Alcance}
+
+Esta política regula el tratamiento de datos de ubicación en las actividades de investigación, validación, pruebas, demostraciones y publicación del proyecto RoutTech.
+
+\section{Reglas de manejo}
+
+\begin{enumerate}
+  \item Las ubicaciones se tratarán de forma agregada o generalizada y no se asociarán públicamente con una persona identificada o identificable.
+  \item Los puntos de origen y destino se expresarán como campus, sector, barrio o parroquia; no se registrarán ni publicarán direcciones domiciliarias exactas.
+  \item No se publicarán coordenadas precisas, mapas con trayectorias individuales ni historiales de desplazamiento de conductores o pasajeros.
+  \item Las rutas utilizadas en el MVP, pruebas, capturas y demostraciones serán sintéticas o estarán previamente disociadas.
+  \item Durante el desarrollo académico, entrevistas y sesiones de validación no se activará seguimiento de ubicación en tiempo real.
+  \item Una futura función de ubicación requerirá consentimiento explícito, temporal y revocable del usuario, y solo se mantendrá activa durante la operación necesaria.
+  \item La negativa o retiro del permiso de ubicación no impedirá el acceso a las funciones que no dependan de este dato.
+  \item Los datos de ubicación no se utilizarán para vigilancia académica, disciplinaria, laboral, comercial ni para elaborar perfiles individuales.
+  \item Los reportes y paneles mostrarán únicamente resultados agregados y omitirán grupos pequeños que puedan facilitar la reidentificación.
+  \item Las evidencias visuales y los archivos publicados excluirán domicilios, placas, coordenadas, rutas personales y metadatos de ubicación.
+\end{enumerate}
+
+\section{Controles de verificación}
+
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{L{5.0cm} Y}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Control}} & \textcolor{white}{\textbf{Evidencia esperada}}\\
+Datos sintéticos en el MVP & Casos de prueba, base de demostración y capturas con rutas ficticias.\\
+Permiso explícito y revocable & Requisito, escenario Gherkin y prueba funcional del consentimiento y retiro.\\
+Generalización de ubicaciones & Revisión de campos, mapas y archivos antes de su uso o publicación.\\
+Ausencia de rutas individuales & Auditoría del repositorio y de los documentos de divulgación.\\
+Desactivación del seguimiento & Configuración y pruebas que demuestren la ausencia de geolocalización en tiempo real.\\
+\end{tabularx}
+
+\section{Firmas}
+
+\vspace{0.25cm}
+\noindent\begin{tabularx}{\textwidth}{Y C{4.1cm} C{2.9cm}}
+\rowcolor{RTTerracotta}
+\textcolor{white}{\textbf{Nombre}} &
+\textcolor{white}{\textbf{Firma}} &
+\textcolor{white}{\textbf{Fecha}}\\
+\Mayra & \rule{3.7cm}{0.4pt} & \rule{2.4cm}{0.4pt}\\[4pt]
+\Anderson & \rule{3.7cm}{0.4pt} & \rule{2.4cm}{0.4pt}\\[4pt]
+\Docente & \rule{3.7cm}{0.4pt} & \rule{2.4cm}{0.4pt}\\
+\end{tabularx}
+
+\end{document}

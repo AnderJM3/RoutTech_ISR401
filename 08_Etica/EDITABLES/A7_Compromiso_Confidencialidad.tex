@@ -1,0 +1,216 @@
+\documentclass[10pt,a4paper]{article}
+
+% ============================================================
+% A7 - COMPROMISO DE CONFIDENCIALIDAD ROUTTECH
+% Documento autocontenido y compatible con pdfLaTeX en Overleaf.
+% No requiere archivos .sty, configuracion.tex ni subcarpetas.
+% ============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,top=1.85cm,bottom=1.8cm,left=1.9cm,right=1.9cm,headheight=20pt]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx,array,booktabs,colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{tikz}
+\usepackage{ragged2e}
+
+% ---------- PALETA ROUTTECH ----------
+\definecolor{RTForest}{HTML}{25463B}
+\definecolor{RTTerracotta}{HTML}{B45F45}
+\definecolor{RTGold}{HTML}{D5A64A}
+\definecolor{RTCream}{HTML}{F7F2E8}
+\definecolor{RTLight}{HTML}{EEF3F0}
+\definecolor{RTGray}{HTML}{4D5652}
+
+% ---------- DATOS DEL DOCUMENTO ----------
+\newcommand{\Proyecto}{RoutTech: Sistema de Movilidad Colaborativa para la Comunidad Universitaria de la UTEQ}
+\newcommand{\Asignatura}{ISR-401 -- Ingeniería de Requisitos}
+\newcommand{\Periodo}{2026--2027 PPA}
+\newcommand{\CategoriaEtica}{Categoría B -- Datos personales}
+\newcommand{\Repositorio}{https://github.com/AnderJM3/RoutTech_ISR401}
+\newcommand{\FechaDocumento}{29 de julio de 2026}
+\newcommand{\VersionDocumento}{2.0}
+\newcommand{\Paralelo}{Cuarto nivel -- Software B}
+
+% ---------- DATOS DE LOS INTEGRANTES ----------
+\newcommand{\Mayra}{CORDOVA CARREÑO MAYRA LUCILA}
+\newcommand{\CedulaMayra}{0969483943}
+\newcommand{\MatriculaMayra}{617891}
+\newcommand{\CorreoMayra}{mcordovac2@uteq.edu.ec}
+\newcommand{\RolMayra}{Responsable de trabajo de campo, requisitos, validación, componente experimental y custodia inicial de evidencias}
+
+\newcommand{\Anderson}{NARANJO FLORES ANDERSON JEAMPIERE}
+\newcommand{\CedulaAnderson}{1207412659}
+\newcommand{\MatriculaAnderson}{617251}
+\newcommand{\CorreoAnderson}{anaranjof2@uteq.edu.ec}
+\newcommand{\RolAnderson}{Líder del equipo, responsable de LaTeX, GitHub, modelado, integración documental, anonimización y publicación controlada de artefactos}
+
+% ---------- TABLAS ----------
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{5pt}
+
+% ---------- ENCABEZADO Y PIE ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{UTEQ | FCC | ISR-401}}
+\fancyhead[R]{\small\textbf{A7 -- Compromiso de confidencialidad}}
+\fancyfoot[L]{\small Paquete ético RoutTech}
+\fancyfoot[R]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{RTTerracotta}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{RTGold}\leaders\hrule height \footrulewidth\hfill}}
+
+% ---------- TÍTULOS ----------
+\titleformat{\section}
+  {\large\bfseries\color{RTForest}}
+  {}{0pt}{}
+  [\vspace{1pt}\color{RTGold}\titlerule]
+\titlespacing*{\section}{0pt}{0.65em}{0.35em}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=RTForest,
+  urlcolor=RTTerracotta,
+  pdftitle={A7 Compromiso de Confidencialidad RoutTech},
+  pdfauthor={Equipo RoutTech}
+}
+\urlstyle{same}
+\setlength{\parindent}{1.1em}
+\setlength{\parskip}{2.5pt}
+\setstretch{1.08}
+\setlist[enumerate]{leftmargin=1.55em,itemsep=2.2pt,topsep=3pt}
+
+% ---------- FORMATO DE DECLARACIÓN INDIVIDUAL ----------
+\newcommand{\CompromisoIndividual}[6]{%
+\section{Compromiso individual}
+
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{L{4.15cm} Y}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Campo}} & \textcolor{white}{\textbf{Información}}\\
+Nombre completo & #1\\
+Cédula & #2\\
+Matrícula & #3\\
+Correo institucional & #4\\
+Paralelo & \Paralelo\\
+Rol en el proyecto & #5\\
+\end{tabularx}
+
+\vspace{0.35cm}
+
+Yo, \textbf{#1}, identificado(a) con cédula de ciudadanía \textbf{#2}, en calidad de integrante del proyecto \textbf{\Proyecto}, declaro que conozco el carácter reservado de la información obtenida durante las actividades de investigación y asumo los siguientes compromisos:
+
+\begin{enumerate}
+  \item Utilizar la información únicamente para los fines académicos, científicos y documentales autorizados dentro del proyecto RoutTech.
+  \item Mantener la confidencialidad de entrevistas, cuestionarios, consentimientos, fotografías, audios, videos, transcripciones, registros de observación y demás evidencias recolectadas.
+  \item No divulgar nombres, cédulas, matrículas, correos personales, teléfonos, rostros, voces, placas vehiculares, domicilios, ubicaciones exactas ni recorridos que permitan identificar directa o indirectamente a una persona.
+  \item No cargar datos personales, archivos firmados ni evidencias identificables en el repositorio público \url{\Repositorio}.
+  \item Publicar únicamente documentos, matrices, resultados y conjuntos de datos previamente anonimizados, disociados o presentados de forma agregada.
+  \item Mantener los datos crudos en medios locales protegidos, con acceso limitado a los integrantes autorizados del equipo y de acuerdo con el A4 -- Plan de Gestión de Datos.
+  \item No copiar, transferir, compartir ni entregar información del estudio a personas ajenas al proyecto sin autorización expresa.
+  \item Informar inmediatamente al líder del equipo y al docente responsable sobre cualquier pérdida, acceso no autorizado, filtración o uso indebido de la información.
+  \item Respetar las decisiones de retiro de los participantes y eliminar o excluir sus datos cuando corresponda y sea técnicamente posible.
+  \item Conservar, respaldar y eliminar los archivos según los plazos y procedimientos establecidos en el Plan de Gestión de Datos.
+  \item Mantener este deber de confidencialidad aun después de finalizar la asignatura, el proyecto o la relación con la Universidad Técnica Estatal de Quevedo.
+  \item Asumir la responsabilidad académica, ética y legal derivada del incumplimiento de este compromiso.
+\end{enumerate}
+
+Declaro que he leído y comprendido el contenido de este documento, y que acepto cumplirlo de manera libre y consciente.
+
+\vfill
+\begin{center}
+\rule{7.2cm}{0.45pt}\\[-1pt]
+\textbf{#1}\\
+#6\\[9pt]
+\begin{tabular}{rl}
+\textbf{Firma:} & \rule{7.0cm}{0.4pt}\\[11pt]
+\textbf{Fecha:} & \rule{3.2cm}{0.4pt}\\[11pt]
+\textbf{Lugar:} & Quevedo, Los Ríos, Ecuador
+\end{tabular}
+\end{center}
+}
+
+\begin{document}
+\justifying
+
+% ======================= PORTADA =======================
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[RTForest] (current page.north west) rectangle ([yshift=-4.6cm]current page.north east);
+  \fill[RTTerracotta] ([yshift=-4.6cm]current page.north west) rectangle ([yshift=-4.95cm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{0.65cm}
+\begin{center}
+{\color{white}\Large\bfseries UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}
+
+\vspace{1.75cm}
+{\large\bfseries\color{RTForest} Facultad de Ciencias de la Computación\\[4pt]}
+{\normalsize\color{RTGray} Carrera de Ingeniería de Software}
+
+\vspace{0.8cm}
+
+{\Huge\bfseries\color{RTForest} COMPROMISO DE CONFIDENCIALIDAD\\[8pt]}
+{\Large\bfseries\color{RTTerracotta} A7 -- Equipo investigador}
+
+\vspace{0.95cm}
+
+\begin{tabularx}{0.90\textwidth}{>{\centering\arraybackslash}X}
+\rowcolor{RTCream}
+\textbf{\Proyecto}\\[7pt]
+\textbf{Clasificación ética:} \CategoriaEtica\\
+\textbf{Asignatura:} \Asignatura\\
+\textbf{Periodo académico:} \Periodo
+\end{tabularx}
+
+\vfill
+\begin{tabular}{rl}
+\textbf{Documento:} & A7 -- Compromiso de confidencialidad\\
+\textbf{Versión:} & \VersionDocumento\\
+\textbf{Estado:} & Versión 2.0 para firma individual\\
+\textbf{Equipo:} & Anderson Naranjo y Mayra Cordova\\
+\textbf{Repositorio:} & \href{\Repositorio}{RoutTech\_ISR401}\\
+\textbf{Fecha:} & \FechaDocumento
+\end{tabular}
+
+\vspace{0.75cm}
+{\small Quevedo -- Los Ríos -- Ecuador}
+\end{center}
+\clearpage
+
+% ======================= MAYRA =======================
+\CompromisoIndividual
+{\Mayra}
+{\CedulaMayra}
+{\MatriculaMayra}
+{\CorreoMayra}
+{\RolMayra}
+{Integrante del equipo investigador}
+
+\clearpage
+
+% ======================= ANDERSON =======================
+\CompromisoIndividual
+{\Anderson}
+{\CedulaAnderson}
+{\MatriculaAnderson}
+{\CorreoAnderson}
+{\RolAnderson}
+{Líder del equipo investigador}
+
+\end{document}

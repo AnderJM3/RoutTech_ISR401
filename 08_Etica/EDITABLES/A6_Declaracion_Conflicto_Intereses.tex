@@ -1,0 +1,248 @@
+\documentclass[10pt,a4paper]{article}
+
+% ============================================================
+% A6 - DECLARACION DE CONFLICTO DE INTERESES ROUTTECH
+% Documento autocontenido, compatible con pdfLaTeX en Overleaf.
+% ============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{tgheros}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,top=1.85cm,bottom=1.8cm,left=1.9cm,right=1.9cm,headheight=20pt]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx,array,booktabs,colortbl}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{tikz}
+\usepackage{ragged2e}
+\usepackage{amssymb}
+
+% ---------- PALETA ROUTTECH ----------
+\definecolor{RTForest}{HTML}{25463B}
+\definecolor{RTTerracotta}{HTML}{B45F45}
+\definecolor{RTGold}{HTML}{D5A64A}
+\definecolor{RTCream}{HTML}{F7F2E8}
+\definecolor{RTLight}{HTML}{EEF3F0}
+\definecolor{RTGray}{HTML}{4D5652}
+
+% ---------- DATOS DEL DOCUMENTO ----------
+\newcommand{\Proyecto}{RoutTech: Sistema de Movilidad Colaborativa para la Comunidad Universitaria de la UTEQ}
+\newcommand{\Asignatura}{ISR-401 -- Ingeniería de Requisitos}
+\newcommand{\Periodo}{2026--2027 PPA}
+\newcommand{\CategoriaEtica}{Categoría B -- Datos personales}
+\newcommand{\Repositorio}{https://github.com/AnderJM3/RoutTech_ISR401}
+\newcommand{\FechaDocumento}{29 de julio de 2026}
+\newcommand{\VersionDocumento}{2.0}
+\newcommand{\Paralelo}{Cuarto nivel -- Software B}
+
+\newcommand{\Mayra}{CORDOVA CARREÑO MAYRA LUCILA}
+\newcommand{\CedulaMayra}{0969483943}
+\newcommand{\MatriculaMayra}{617891}
+\newcommand{\CorreoMayra}{mcordovac2@uteq.edu.ec}
+
+\newcommand{\Anderson}{NARANJO FLORES ANDERSON JEAMPIERE}
+\newcommand{\CedulaAnderson}{1207412659}
+\newcommand{\MatriculaAnderson}{617251}
+\newcommand{\CorreoAnderson}{anaranjof2@uteq.edu.ec}
+
+% ---------- TABLAS ----------
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.14}
+\setlength{\tabcolsep}{4.3pt}
+
+% ---------- ENCABEZADO Y PIE ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{UTEQ | FCC | ISR-401}}
+\fancyhead[R]{\small\textbf{A6 -- Conflicto de intereses}}
+\fancyfoot[L]{\small Paquete ético RoutTech}
+\fancyfoot[R]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{RTTerracotta}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{RTGold}\leaders\hrule height \footrulewidth\hfill}}
+
+% ---------- TITULOS ----------
+\titleformat{\section}
+  {\large\bfseries\color{RTForest}}
+  {}{0pt}{}
+  [\vspace{1pt}\color{RTGold}\titlerule]
+\titlespacing*{\section}{0pt}{0.65em}{0.35em}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=RTForest,
+  urlcolor=RTTerracotta,
+  pdftitle={A6 Declaracion de Conflicto de Intereses RoutTech},
+  pdfauthor={Equipo RoutTech}
+}
+\urlstyle{same}
+\setlength{\parindent}{1.1em}
+\setlength{\parskip}{2.5pt}
+\setstretch{1.04}
+\setlength{\emergencystretch}{2em}
+\setlist[itemize]{leftmargin=1.4em,itemsep=1.5pt,topsep=2pt}
+
+% ---------- FORMULARIO REUTILIZABLE ----------
+\newcommand{\Casilla}{\ensuremath{\square}}
+
+\newcommand{\FormularioConflicto}[5]{%
+\section{Declaración individual}
+
+\noindent\rowcolors{2}{RTLight}{white}
+\begin{tabularx}{\textwidth}{L{4.0cm} Y}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Campo}} & \textcolor{white}{\textbf{Información}}\\
+Nombre completo & #1\\
+Cédula de ciudadanía & #2\\
+Matrícula & #3\\
+Correo institucional & #4\\
+Rol en el proyecto & #5\\
+Proyecto & \Proyecto.\\
+\end{tabularx}
+
+\vspace{0.35cm}
+Yo, \textbf{#1}, declaro de manera libre, informada y bajo responsabilidad personal que responderé con veracidad las siguientes preguntas. Reconozco que cualquier situación que pueda afectar mi independencia, objetividad o imparcialidad deberá registrarse y comunicarse oportunamente dentro del proyecto.
+
+\vspace{0.25cm}
+\small
+\noindent\rowcolors{2}{RTCream}{white}
+\begin{tabularx}{\textwidth}{C{0.70cm} Y C{1.0cm} C{1.0cm}}
+\rowcolor{RTTerracotta}
+\textcolor{white}{\textbf{N.º}} &
+\textcolor{white}{\textbf{Situación a declarar}} &
+\textcolor{white}{\textbf{Sí}} &
+\textcolor{white}{\textbf{No}}\\
+1 & Mantengo vínculo laboral, contractual, profesional o de prestación de servicios con la organización o unidad objeto de estudio. & \Casilla & \Casilla\\
+2 & Poseo interés económico o posibilidad de beneficio material relacionado con el proyecto o sus resultados. & \Casilla & \Casilla\\
+3 & Tengo parentesco, relación personal cercana o dependencia directa con participantes o autoridades que pudiera influir en mis decisiones. & \Casilla & \Casilla\\
+4 & He recibido o se me ha ofrecido algún pago, regalo, incentivo, favor o beneficio vinculado con la ejecución o los resultados del estudio. & \Casilla & \Casilla\\
+5 & Existe financiamiento externo, patrocinio o apoyo condicionado que pueda influir en el alcance, análisis, interpretación o divulgación de resultados. & \Casilla & \Casilla\\
+6 & Participo en otro proyecto, consultoría o actividad cuyos intereses puedan entrar en conflicto con RoutTech. & \Casilla & \Casilla\\
+7 & Existe otra circunstancia académica, personal, institucional o profesional que pueda comprometer, o aparentar comprometer, mi independencia. & \Casilla & \Casilla\\
+\end{tabularx}
+\normalsize
+
+\vspace{0.35cm}
+\noindent\textbf{Explicación de respuestas afirmativas o declaración de inexistencia de conflicto}
+
+Si se marcó ``Sí'' en cualquiera de las preguntas, describa la situación y la medida propuesta para gestionarla. Si todas las respuestas son ``No'', escriba: \textit{No se identifican conflictos de intereses que declarar}.
+
+\vspace{0.25cm}
+\noindent\rule{\linewidth}{0.4pt}\\[0.55cm]
+\rule{\linewidth}{0.4pt}\\[0.55cm]
+\rule{\linewidth}{0.4pt}
+
+\vspace{0.45cm}
+Declaro que la información registrada es completa y verdadera. Me comprometo a informar cualquier cambio que genere un conflicto de intereses real, potencial o aparente durante la vigencia del proyecto.
+
+\vfill
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+\rule{6.1cm}{0.4pt}\\[-1pt]
+Firma del declarante\\[2pt]
+#1
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\centering
+Fecha: \rule{3.2cm}{0.4pt}\\[6pt]
+Lugar: Quevedo, Ecuador
+\end{minipage}
+}
+
+\begin{document}
+\justifying
+
+% ======================= PORTADA =======================
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[RTForest] (current page.north west) rectangle ([yshift=-4.6cm]current page.north east);
+  \fill[RTTerracotta] ([yshift=-4.6cm]current page.north west) rectangle ([yshift=-4.95cm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{0.65cm}
+\begin{center}
+{\color{white}\Large\bfseries UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}
+
+\vspace{1.75cm}
+{\large\bfseries\color{RTForest} Facultad de Ciencias de la Computación\\[4pt]}
+{\normalsize\color{RTGray} Carrera de Ingeniería de Software}
+
+\vspace{0.8cm}
+
+{\Huge\bfseries\color{RTForest} DECLARACIÓN DE CONFLICTO DE INTERESES\\[8pt]}
+{\Large\bfseries\color{RTTerracotta} A6 -- Aprobación ética}
+
+\vspace{1.0cm}
+
+{\large\bfseries \Proyecto}\\[8pt]
+{\color{RTGold}\rule{0.84\textwidth}{1.2pt}}\\[7pt]
+\textbf{Clasificación ética:} \CategoriaEtica\\
+\textbf{Asignatura:} \Asignatura\\
+\textbf{Periodo académico:} \Periodo\\[7pt]
+{\color{RTGold}\rule{0.84\textwidth}{1.2pt}}
+
+\vfill
+\begin{tabular}{rl}
+\textbf{Documento:} & A6 -- Declaración de conflicto de intereses\\
+\textbf{Versión:} & \VersionDocumento\\
+\textbf{Estado:} & Versión 2.0 para firma individual\\
+\textbf{Paralelo:} & \Paralelo\\
+\textbf{Repositorio:} & \href{\Repositorio}{RoutTech\_ISR401}\\
+\textbf{Fecha:} & \FechaDocumento
+\end{tabular}
+
+\vspace{0.75cm}
+{\small Quevedo -- Los Ríos -- Ecuador}
+\end{center}
+\clearpage
+
+% ======================= INSTRUCCIONES =======================
+\section{Finalidad e instrucciones}
+
+El presente documento contiene las declaraciones individuales de conflicto de intereses de las dos estudiantes responsables del proyecto RoutTech. Cada formulario debe ser leído, marcado y firmado exclusivamente por la persona identificada en él.
+
+Un conflicto de intereses puede ser \textbf{real}, cuando afecta directamente una decisión; \textbf{potencial}, cuando podría presentarse durante el proyecto; o \textbf{aparente}, cuando una persona externa podría percibir razonablemente una falta de imparcialidad. Declarar una situación no implica automáticamente una falta ética; permite evaluarla y aplicar medidas de manejo.
+
+\begin{itemize}
+  \item Marcar una sola opción por cada pregunta.
+  \item Explicar toda respuesta afirmativa.
+  \item Cuando no exista conflicto, dejar constancia expresa en el espacio correspondiente.
+  \item Firmar y fechar únicamente el formulario individual propio.
+  \item Informar cualquier cambio relevante que ocurra durante la ejecución del proyecto.
+\end{itemize}
+
+\section{Personas declarantes}
+
+\noindent\rowcolors{2}{RTLight}{white}
+\begin{tabularx}{\textwidth}{L{5.2cm} Y}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Declarante}} & \textcolor{white}{\textbf{Responsabilidad principal}}\\
+\Mayra & Trabajo de campo, entrevistas, requisitos, validación y componente experimental.\\
+\Anderson & Liderazgo, LaTeX, GitHub, modelado, trazabilidad e integración documental.\\
+\end{tabularx}
+
+\vspace{0.45cm}
+La conformación actual del equipo investigador está integrada únicamente por \Mayra\ y \Anderson. Las personas que se retiraron del proyecto no forman parte de este documento ni deben suscribirlo.
+
+\vfill
+\noindent\textbf{Control documental:} cada declaración firmada deberá conservarse junto con el paquete ético del proyecto. Las copias públicas deberán ocultar cédulas y firmas antes de ser incorporadas al repositorio.
+
+\clearpage
+\FormularioConflicto{\Mayra}{\CedulaMayra}{\MatriculaMayra}{\CorreoMayra}{Responsable de trabajo de campo, entrevistas, requisitos, validación y componente experimental}
+
+\clearpage
+\FormularioConflicto{\Anderson}{\CedulaAnderson}{\MatriculaAnderson}{\CorreoAnderson}{Líder; responsable de LaTeX, GitHub, modelado, trazabilidad e integración documental}
+
+\end{document}

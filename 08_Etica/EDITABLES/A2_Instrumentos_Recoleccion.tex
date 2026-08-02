@@ -1,0 +1,485 @@
+\documentclass[10pt,a4paper]{article}
+
+% ============================================================
+% A2 - INSTRUMENTOS DE RECOLECCION ROUTTECH
+% Documento autocontenido y compatible con pdfLaTeX en Overleaf.
+% No requiere archivos .sty, configuracion.tex ni subcarpetas.
+% ============================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage{tgheros} % Sustituto libre y cercano a Gill Sans
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[a4paper,top=1.85cm,bottom=1.8cm,left=1.9cm,right=1.9cm,headheight=20pt]{geometry}
+\usepackage{xcolor}
+\usepackage{tabularx,array,booktabs,colortbl,longtable,multirow}
+\usepackage{enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{microtype}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xurl}
+\usepackage{tikz}
+\usepackage{ragged2e}
+\usepackage{etoolbox}
+\usepackage{needspace}
+\usepackage{amssymb}
+
+% ---------- PALETA PROPIA ROUTTECH ----------
+\definecolor{RTForest}{HTML}{25463B}
+\definecolor{RTTerracotta}{HTML}{B45F45}
+\definecolor{RTGold}{HTML}{D5A64A}
+\definecolor{RTCream}{HTML}{F7F2E8}
+\definecolor{RTLight}{HTML}{EEF3F0}
+\definecolor{RTGray}{HTML}{4D5652}
+\definecolor{RTGreen}{HTML}{3F7D5A}
+
+% ---------- DATOS DEL DOCUMENTO ----------
+\newcommand{\Proyecto}{RoutTech: Sistema de Movilidad Colaborativa para la Comunidad Universitaria de la UTEQ}
+\newcommand{\Asignatura}{ISR-401 -- Ingeniería de Requisitos}
+\newcommand{\Periodo}{2026--2027 PPA}
+\newcommand{\CategoriaEtica}{Categoría B -- Datos personales}
+\newcommand{\FechaDocumento}{29 de julio de 2026}
+\newcommand{\VersionDocumento}{2.0}
+\newcommand{\EstadoDocumento}{Versión 2.0 para revisión ética y firma}
+\newcommand{\Paralelo}{Cuarto nivel -- Software B}
+\newcommand{\RepositorioPublico}{https://github.com/AnderJM3/RoutTech_ISR401}
+\newcommand{\RepositorioPrivado}{https://github.com/AnderJM3/RoutTech_ISR401-PRIVATE}
+\newcommand{\Docente}{Ing. Gleiston Guerrero Ulloa, PhD}
+\newcommand{\CorreoDocente}{gguerrero@uteq.edu.ec}
+
+\newcommand{\Anderson}{NARANJO FLORES ANDERSON JEAMPIERE}
+\newcommand{\CedulaAnderson}{1207412659}
+\newcommand{\MatriculaAnderson}{617251}
+\newcommand{\CorreoAnderson}{anaranjof2@uteq.edu.ec}
+
+\newcommand{\Mayra}{CORDOVA CARREÑO MAYRA LUCILA}
+\newcommand{\CedulaMayra}{0969483943}
+\newcommand{\MatriculaMayra}{617891}
+\newcommand{\CorreoMayra}{mcordovac2@uteq.edu.ec}
+
+% ---------- TABLAS ----------
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{J}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\newcolumntype{P}[1]{>{\RaggedRight\arraybackslash}p{#1}}
+\renewcommand{\arraystretch}{1.18}
+\setlength{\tabcolsep}{4.2pt}
+
+% ---------- ENCABEZADO Y PIE ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textbf{UTEQ | FCC | ISR-401}}
+\fancyhead[R]{\small\textbf{A2 -- Instrumentos de recolección}}
+\fancyfoot[L]{\small Paquete ético RoutTech}
+\fancyfoot[R]{\small Página \thepage\ de \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.8pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{RTTerracotta}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{\color{RTGold}\leaders\hrule height \footrulewidth\hfill}}
+
+% ---------- TITULOS ----------
+\titleformat{\section}
+  {\large\bfseries\color{RTForest}}
+  {\thesection.}{0.45em}{}
+  [\vspace{1pt}\color{RTGold}\titlerule]
+\titleformat{\subsection}
+  {\normalsize\bfseries\color{RTTerracotta}}
+  {\thesubsection}{0.45em}{}
+\titlespacing*{\section}{0pt}{0.78em}{0.38em}
+\titlespacing*{\subsection}{0pt}{0.58em}{0.28em}
+
+% ---------- CAJAS ----------
+\newtcolorbox{InfoBox}[1][]{
+  enhanced,breakable,
+  colback=RTLight,colframe=RTForest,
+  boxrule=0.8pt,arc=2mm,
+  left=2.6mm,right=2.6mm,top=1.6mm,bottom=1.6mm,
+  title=#1,fonttitle=\bfseries,coltitle=white,
+  colbacktitle=RTForest
+}
+\newtcolorbox{EthicsBox}[1][]{
+  enhanced,breakable,
+  colback=RTCream,colframe=RTTerracotta,
+  boxrule=0.8pt,arc=2mm,
+  left=2.6mm,right=2.6mm,top=1.6mm,bottom=1.6mm,
+  title=#1,fonttitle=\bfseries,coltitle=white,
+  colbacktitle=RTTerracotta
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=RTForest,
+  urlcolor=RTTerracotta,
+  pdftitle={A2 Instrumentos de Recoleccion RoutTech},
+  pdfauthor={Naranjo Flores Anderson Jeampiere y Cordova Carreño Mayra Lucila}
+}
+\urlstyle{same}
+\setlength{\parindent}{1.1em}
+\setlength{\parskip}{2.5pt}
+\setstretch{1.10}
+\setlength{\emergencystretch}{2em}
+\hbadness=10000
+\vbadness=10000
+\setlist[itemize]{leftmargin=1.35em,itemsep=1.2pt,topsep=2pt}
+\setlist[enumerate]{leftmargin=1.60em,itemsep=1.2pt,topsep=2pt}
+\AtBeginEnvironment{longtable}{\small}
+\AtEndEnvironment{longtable}{\normalsize}
+
+\begin{document}
+\justifying
+
+% ======================= PORTADA =======================
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture,overlay]
+  \fill[RTForest] (current page.north west) rectangle ([yshift=-4.6cm]current page.north east);
+  \fill[RTTerracotta] ([yshift=-4.6cm]current page.north west) rectangle ([yshift=-4.95cm]current page.north east);
+\end{tikzpicture}
+
+\vspace*{0.65cm}
+\begin{center}
+{\color{white}\Large\bfseries UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}
+
+\vspace{1.75cm}
+{\large\bfseries\color{RTForest} Facultad de Ciencias de la Computación\\[4pt]}
+{\normalsize\color{RTGray} Carrera de Ingeniería de Software}
+
+\vspace{0.8cm}
+
+{\Huge\bfseries\color{RTForest} INSTRUMENTOS DE RECOLECCIÓN\\[8pt]}
+{\Large\bfseries\color{RTTerracotta} A2 -- Aprobación ética}
+
+\vspace{1.0cm}
+
+\begin{tcolorbox}[width=0.90\textwidth,colback=RTCream,colframe=RTGold,boxrule=1pt,arc=2mm]
+\centering
+{\large\bfseries \Proyecto}\\[7pt]
+\textbf{Clasificación ética:} \CategoriaEtica\\
+\textbf{Asignatura:} \Asignatura\\
+\textbf{Periodo académico:} \Periodo
+\end{tcolorbox}
+
+\vfill
+\begin{tabular}{rl}
+\textbf{Documento:} & A2 -- Instrumentos de recolección de información\\
+\textbf{Versión:} & \VersionDocumento\\
+\textbf{Estado:} & \EstadoDocumento\\
+\textbf{Paralelo:} & \Paralelo\\
+\textbf{Fecha:} & \FechaDocumento
+\end{tabular}
+
+\vspace{0.75cm}
+{\small Quevedo -- Los Ríos -- Ecuador}
+\end{center}
+\clearpage
+
+% ======================= CONTENIDO =======================
+\section{Datos de identificación}
+
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{L{4.6cm} J}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Campo}} & \textcolor{white}{\textbf{Información}}\\
+Título del proyecto & \Proyecto.\\
+Categoría ética & \CategoriaEtica.\\
+Docente responsable & \Docente. Correo institucional: \CorreoDocente.\\
+Responsable de instrumentos y trabajo de campo & \Mayra. Cédula: \CedulaMayra; matrícula: \MatriculaMayra; correo: \CorreoMayra.\\
+Líder y custodio documental & \Anderson. Cédula: \CedulaAnderson; matrícula: \MatriculaAnderson; correo: \CorreoAnderson.\\
+Repositorio documental público & \url{\RepositorioPublico}.\\
+Repositorio privado de evidencias identificables & \url{https://github.com/AnderJM3/RoutTech_ISR401}. Acceso limitado a Anderson Naranjo y Mayra Cordova.\\
+Versión, fecha y estado & Versión \VersionDocumento; \FechaDocumento; \EstadoDocumento.\\
+\end{tabularx}
+
+\begin{EthicsBox}[Condición ética de aplicación]
+Todos los instrumentos de este anexo se aplican únicamente a personas mayores de edad, después de explicar el estudio y obtener su consentimiento informado. La participación es voluntaria; cada persona puede omitir preguntas o retirarse sin consecuencia alguna. No se solicitarán contraseñas, placas reales, direcciones domiciliarias exactas ni geolocalización continua.
+\end{EthicsBox}
+
+\section{Objetivo y alcance del anexo}
+
+El presente anexo consolida los instrumentos utilizados y previstos para recopilar información sobre problemas, necesidades, expectativas y criterios de aceptación relacionados con la movilidad colaborativa en la comunidad universitaria de la UTEQ. Incluye la guía de entrevista semiestructurada, el cuestionario de movilidad, el protocolo de observación no participante y la guía de validación mediante walkthrough. Cada instrumento está vinculado con un código, una versión, un responsable, una forma de registro y reglas específicas de confidencialidad.
+
+Las dieciséis entrevistas realizadas se identifican con los códigos \texttt{EV-ENT-001} a \texttt{EV-ENT-016}. El cuestionario aplicado mediante Google Forms contiene 43 respuestas y se conserva como \texttt{EV-CUE-01}. Las versiones consolidadas de los instrumentos permiten mantener la trazabilidad y sirven para futuras réplicas o rondas de validación, sin modificar retroactivamente la evidencia ya obtenida.
+
+\section{Control de versiones de los instrumentos}
+
+\rowcolors{2}{RTCream}{white}
+\noindent\begin{tabularx}{\textwidth}{L{4.05cm} C{2.25cm} C{1.45cm} C{2.55cm} J}
+\rowcolor{RTTerracotta}
+\textcolor{white}{\textbf{Instrumento}} &
+\textcolor{white}{\textbf{Código}} &
+\textcolor{white}{\textbf{Versión}} &
+\textcolor{white}{\textbf{Fecha}} &
+\textcolor{white}{\textbf{Responsable}}\\
+Guía de entrevista semiestructurada & INS-ENT-01 & 2.0 & 29/07/2026 & Mayra Cordova\\
+Cuestionario de movilidad colaborativa & INS-CUE-01 & 2.0 & 29/07/2026 & Mayra Cordova\\
+Protocolo de observación no participante & INS-OBS-01 & 1.0 & 29/07/2026 & Mayra Cordova y Anderson Naranjo\\
+Guía de validación walkthrough & INS-VAL-01 & 1.0 & 29/07/2026 & Mayra Cordova y Anderson Naranjo\\
+Ficha de metadatos y catálogo de evidencias & INS-MET-01 & 1.0 & 29/07/2026 & Anderson Naranjo\\
+\end{tabularx}
+
+\section{Guía de entrevista semiestructurada -- INS-ENT-01}
+
+\subsection{Ficha de aplicación}
+
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{L{4.4cm} J}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Dato}} & \textcolor{white}{\textbf{Registro}}\\
+Código de evidencia & \texttt{EV-ENT-\_\_\_}\\
+Fecha y hora & \rule{4.5cm}{0.4pt}\\
+Modalidad & $\square$ Presencial \quad $\square$ Virtual\\
+Duración estimada & 15 a 30 minutos.\\
+Perfil del participante & $\square$ Estudiante \quad $\square$ Conductor potencial \quad $\square$ Personal administrativo \quad $\square$ Usuario técnico \quad $\square$ Usuario no técnico\\
+Entrevistadora principal & \Mayra.\\
+Apoyo de registro y custodia & \Anderson.\\
+Consentimiento asociado & \texttt{EV-CONS-\_\_\_}\\
+Autorizaciones & $\square$ Audio \quad $\square$ Video \quad $\square$ Fotografía \quad $\square$ Uso académico anonimizado\\
+\end{tabularx}
+
+\subsection{Guion de apertura}
+
+\begin{InfoBox}[Texto de presentación]
+Buenos días/tardes. Somos estudiantes de Ingeniería de Software de la Universidad Técnica Estatal de Quevedo y desarrollamos RoutTech, una propuesta académica de movilidad colaborativa para la comunidad universitaria. La entrevista busca conocer experiencias y necesidades relacionadas con el traslado hacia o desde la UTEQ. Su participación es voluntaria, puede omitir cualquier pregunta y puede retirarse en cualquier momento. Las respuestas se analizarán de forma anonimizada y no se publicarán datos que permitan identificarle. Antes de comenzar, confirmaremos el consentimiento y las autorizaciones de grabación que usted decida otorgar.
+\end{InfoBox}
+
+\subsection{Preguntas de la entrevista}
+
+\begin{enumerate}
+  \item ¿Cómo se moviliza actualmente hacia o desde la UTEQ?
+  \item ¿Con qué frecuencia se traslada y hacia qué campus o sede?
+  \item ¿Cuánto tiempo espera para conseguir transporte y cuánto dura normalmente su recorrido?
+  \item ¿Qué situaciones le ocasionan retrasos, inseguridad o gastos adicionales?
+  \item ¿Ha coordinado viajes compartidos con compañeros o conocidos? ¿Cómo realizó esa coordinación?
+  \item ¿Qué información necesitaría conocer antes de reservar un cupo en un viaje compartido?
+  \item ¿Qué datos debería registrar un conductor para publicar una ruta de manera segura?
+  \item ¿Cómo deberían manejarse las cancelaciones, cambios de horario o ausencia de alguno de los participantes?
+  \item ¿Qué canal de comunicación considera apropiado entre conductor y pasajero antes de iniciar el viaje?
+  \item ¿Qué mecanismos le generarían confianza para viajar con otro miembro de la comunidad UTEQ?
+  \item ¿Qué datos personales no estaría dispuesto a proporcionar o compartir en una plataforma de movilidad?
+  \item ¿Bajo qué condiciones aceptaría compartir su ubicación durante un viaje activo?
+  \item ¿Qué información del vehículo debería mostrarse sin exponer datos innecesarios?
+  \item ¿Cómo debería funcionar el sistema de calificaciones o reputación de conductores y pasajeros?
+  \item ¿Qué factores debería considerar el sistema para recomendar una ruta o un viaje compatible?
+  \item ¿Qué explicación necesitaría ver para comprender por qué una ruta fue recomendada?
+  \item ¿Cómo debería permitir el sistema modificar preferencias o rechazar una recomendación?
+  \item ¿Qué otra función considera importante para RoutTech?
+  \item ¿Aceptaría participar posteriormente en una sesión de validación de requisitos o mockups?
+\end{enumerate}
+
+\subsection{Cierre y registro}
+
+La entrevistadora agradecerá la participación, reiterará el uso académico de la información y verificará si el participante desea recibir información general sobre los resultados. Después de la sesión se generará una ficha de metadatos, se almacenará la grabación en el repositorio privado y se elaborará una transcripción seudonimizada. Los nombres propios que aparezcan accidentalmente en la conversación se sustituirán por códigos o descriptores generales.
+
+\section{Cuestionario de movilidad colaborativa -- INS-CUE-01}
+
+\subsection{Presentación en Google Forms}
+
+\begin{InfoBox}[Texto de encabezado]
+Esta encuesta forma parte del proyecto académico RoutTech. Su participación es voluntaria y está dirigida exclusivamente a personas mayores de edad. No se solicitarán nombres, cédulas, correos personales, placas ni direcciones exactas. Las respuestas se utilizarán para identificar necesidades y requisitos del sistema y se analizarán de forma agregada. Al continuar, usted confirma que ha leído esta información y acepta participar voluntariamente.
+\end{InfoBox}
+
+\subsection{Ítems y variables}
+
+\begingroup
+\scriptsize
+\setlength{\LTleft}{0pt}
+\setlength{\LTright}{0pt}
+\rowcolors{2}{RTLight}{white}
+\begin{longtable}{C{0.65cm} P{7.1cm} P{5.25cm} C{1.35cm}}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{N.}} &
+\textcolor{white}{\textbf{Pregunta}} &
+\textcolor{white}{\textbf{Tipo de respuesta u opciones}} &
+\textcolor{white}{\textbf{Variable}}\\
+\endfirsthead
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{N.}} &
+\textcolor{white}{\textbf{Pregunta}} &
+\textcolor{white}{\textbf{Tipo de respuesta u opciones}} &
+\textcolor{white}{\textbf{Variable}}\\
+\endhead
+1 & ¿A qué facultad y carrera pertenece? & Selección de facultad y carrera; opción ``otra''. & Q01\\
+2 & ¿En qué nivel o semestre se encuentra? & Selección única. & Q02\\
+3 & ¿En qué cantón reside actualmente? & Selección única; opción ``otro''. & Q03\\
+4 & ¿A qué campus o sede se traslada con mayor frecuencia? & Campus Central, La María u otra sede institucional. & Q04\\
+5 & Indique el sector, parroquia o comunidad de residencia, sin escribir una dirección exacta. & Respuesta breve no identificable. & Q05\\
+6 & ¿Cuántos días por semana se traslada a la UTEQ? & Número entero de 1 a 7. & Q06\\
+7 & ¿Qué medios de transporte utiliza habitualmente? & Selección múltiple: bus, taxi, motocicleta, vehículo propio, viaje compartido, caminata u otro. & Q07\\
+8 & ¿Cuánto dura aproximadamente su traslado total? & Menos de 15; 15--30; 31--60; más de 60 minutos. & Q08\\
+9 & ¿Cuánto tiempo espera normalmente para conseguir transporte? & Menos de 5; 5--15; 16--30; más de 30 minutos. & Q09\\
+10 & ¿Cuál es su gasto diario aproximado de transporte? & Rangos monetarios sin solicitar ingresos personales. & Q10\\
+11 & ¿En qué horario llega y regresa habitualmente? & Franjas horarias generales. & Q11\\
+12 & ¿Con qué frecuencia tiene dificultades para conseguir transporte? & Escala Likert de 1 (nunca) a 5 (siempre). & Q12\\
+13 & ¿Qué problemas enfrenta con mayor frecuencia durante el traslado? & Selección múltiple: inseguridad, saturación, demora, costo, falta de rutas u otro. & Q13\\
+14 & ¿Con qué frecuencia ha llegado tarde a clases o actividades por problemas de transporte? & Escala Likert de 1 a 5. & Q14\\
+15 & ¿Cuál considera el problema más grave de su movilidad universitaria? & Selección única. & Q15\\
+16 & ¿En qué medida considera que el transporte afecta su rendimiento o asistencia? & Escala Likert de 1 a 5. & Q16\\
+17 & ¿Qué tan seguro se siente mientras espera o utiliza transporte? & Escala Likert de 1 (muy inseguro) a 5 (muy seguro). & Q17\\
+18 & ¿Usaría una plataforma oficial de viajes compartidos con usuarios institucionalmente verificados? & Sí, tal vez o no. & Q18\\
+19 & ¿Qué funciones considera indispensables en RoutTech? & Respuesta abierta. & Q19\\
+20 & ¿Qué condiciones de privacidad y geolocalización exigiría para utilizar la plataforma? & Respuesta abierta. & Q20\\
+\end{longtable}
+\endgroup
+
+\begin{EthicsBox}[Registro histórico de la encuesta]
+El archivo \texttt{EV-CUE-01} contiene 43 respuestas obtenidas mediante una versión previa del formulario. El archivo original se conserva sin alteraciones como evidencia histórica. La versión 2.0 presentada en este anexo normaliza el instrumento a veinte ítems para futuras aplicaciones; no sustituye ni modifica retroactivamente las respuestas ya obtenidas.
+\end{EthicsBox}
+
+\subsection{Tratamiento de las respuestas}
+
+Google Forms se utilizará para la aplicación y la generación de gráficos descriptivos iniciales. Las respuestas se exportarán en formatos XLSX y CSV. Microsoft Excel se empleará para depuración, codificación, frecuencias, porcentajes, tablas y triangulación con las entrevistas. No se publicarán respuestas individuales que, combinadas, permitan reconocer a una persona o su lugar exacto de residencia.
+
+\section{Protocolo de observación no participante -- INS-OBS-01}
+
+\subsection{Ficha de observación}
+
+\rowcolors{2}{RTCream}{white}
+\noindent\begin{tabularx}{\textwidth}{L{4.3cm} J}
+\rowcolor{RTTerracotta}
+\textcolor{white}{\textbf{Campo}} & \textcolor{white}{\textbf{Registro}}\\
+Código de evidencia & \texttt{EV-OBS-\_\_\_}\\
+Campus o punto general & \rule{6.0cm}{0.4pt}\\
+Fecha y franja horaria & \rule{6.0cm}{0.4pt}\\
+Observadores & Mayra Cordova y/o Anderson Naranjo.\\
+Tipo de observación & Estructurada, no participante y de contexto general.\\
+Registro permitido & Ficha de campo, conteos aproximados y fotografías panorámicas cuando no identifiquen personas.\\
+Regla de privacidad & No registrar rostros reconocibles, credenciales, placas, domicilios, trayectorias individuales ni conversaciones privadas.\\
+\end{tabularx}
+
+\subsection{Focos observacionales}
+
+\begin{enumerate}
+  \item Flujo general de llegada y salida de miembros de la comunidad universitaria.
+  \item Tiempo aproximado de espera observable en franjas de mayor demanda.
+  \item Nivel general de saturación de los medios de transporte disponibles.
+  \item Condiciones de iluminación, señalización y seguridad del entorno.
+  \item Existencia y características de posibles puntos de encuentro institucionales.
+  \item Problemas generales de coordinación, acceso o disponibilidad, sin individualizar personas.
+\end{enumerate}
+
+\subsection{Formato de registro de campo}
+
+\begingroup
+\small
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{C{2.3cm} C{2.2cm} J J}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Hora}} &
+\textcolor{white}{\textbf{Foco}} &
+\textcolor{white}{\textbf{Descripción objetiva}} &
+\textcolor{white}{\textbf{Implicación preliminar}}\\
+\rule{0pt}{1.1cm} & & & \\
+\rule{0pt}{1.1cm} & & & \\
+\rule{0pt}{1.1cm} & & & \\
+\end{tabularx}
+\endgroup
+
+\section{Guía de validación walkthrough -- INS-VAL-01}
+
+\subsection{Objetivo y participantes}
+
+La sesión walkthrough tiene como objetivo validar la claridad, utilidad, coherencia, seguridad y facilidad de uso de los requisitos priorizados, historias de usuario, criterios de aceptación y mockups de RoutTech. Se prevé trabajar con usuarios técnicos y no técnicos mayores de edad. Cada sesión tendrá una duración aproximada de 20 a 30 minutos y requerirá consentimiento previo.
+
+\subsection{Procedimiento de la sesión}
+
+\begin{enumerate}
+  \item Explicar el propósito de la validación y confirmar el consentimiento.
+  \item Presentar de forma breve el alcance de RoutTech y aclarar que el MVP utiliza datos sintéticos.
+  \item Mostrar los flujos priorizados: autenticación, publicación de ruta, búsqueda, reserva, cancelación, reputación y recomendación.
+  \item Solicitar al participante que describa en voz alta qué entiende y qué acción realizaría en cada pantalla.
+  \item Registrar problemas de comprensión, omisiones, riesgos percibidos y sugerencias.
+  \item Evaluar cada criterio mediante una escala de 1 a 5 y registrar la decisión: aceptar, modificar o rechazar.
+  \item Leer los acuerdos de la sesión y documentarlos en un acta de validación.
+\end{enumerate}
+
+\subsection{Ficha de evaluación}
+
+\rowcolors{2}{RTCream}{white}
+\noindent\begin{tabularx}{\textwidth}{J C{2.5cm} J}
+\rowcolor{RTTerracotta}
+\textcolor{white}{\textbf{Criterio}} &
+\textcolor{white}{\textbf{Escala}} &
+\textcolor{white}{\textbf{Observación}}\\
+Claridad del requisito o flujo & 1--5 & \\
+Utilidad de la funcionalidad & 1--5 & \\
+Facilidad de uso del mockup & 1--5 & \\
+Confianza y seguridad percibida & 1--5 & \\
+Comprensión de la explicación de IA & 1--5 & \\
+Protección percibida de la ubicación y datos & 1--5 & \\
+Decisión general & Aceptar / Modificar / Rechazar & \\
+\end{tabularx}
+
+\subsection{Acta resumida de validación}
+
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{L{4.3cm} J}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Campo}} & \textcolor{white}{\textbf{Registro}}\\
+Código de evidencia & \texttt{EV-VAL-\_\_\_}\\
+Perfil del participante & $\square$ Técnico \quad $\square$ No técnico\\
+Fecha y duración & \rule{6.0cm}{0.4pt}\\
+Artefactos revisados & \rule{6.0cm}{0.4pt}\\
+Cambios aceptados & \rule{6.0cm}{0.4pt}\\
+Cambios rechazados o aplazados & \rule{6.0cm}{0.4pt}\\
+Firma o constancia de participación & \rule{6.0cm}{0.4pt}\\
+\end{tabularx}
+
+\section{Ficha de metadatos y codificación de evidencias -- INS-MET-01}
+
+\subsection{Convención de códigos}
+
+\rowcolors{2}{RTLight}{white}
+\noindent\begin{tabularx}{\textwidth}{C{2.6cm} L{4.1cm} J}
+\rowcolor{RTForest}
+\textcolor{white}{\textbf{Prefijo}} &
+\textcolor{white}{\textbf{Tipo de evidencia}} &
+\textcolor{white}{\textbf{Ejemplo}}\\
+EV-CONS & Consentimiento informado & \texttt{EV-CONS-001.pdf}\\
+EV-ENT & Entrevista semiestructurada & \texttt{EV-ENT-001\_video.mp4}; \texttt{EV-ENT-001\_transcripcion.pdf}\\
+EV-CUE & Cuestionario & \texttt{EV-CUE-01\_respuestas.xlsx}\\
+EV-OBS & Observación & \texttt{EV-OBS-001\_ficha.pdf}\\
+EV-VAL & Validación walkthrough & \texttt{EV-VAL-001\_acta.pdf}\\
+EV-DOC & Documento institucional & \texttt{EV-DOC-001.pdf}\\
+\end{tabularx}
+
+\subsection{Campos mínimos de metadatos}
+
+Cada evidencia deberá registrar código, fecha, instrumento, versión, perfil del participante, duración o cantidad de registros, responsable de captura, ubicación de almacenamiento, consentimiento asociado, estado de anonimización y restricciones de acceso. El catálogo general será administrado por Anderson Naranjo y la correspondencia entre evidencia y requisitos será revisada junto con Mayra Cordova.
+
+\section{Custodia, anonimización y acceso}
+
+\begin{itemize}
+  \item Los consentimientos, videos, audios y demás archivos identificables se conservarán en el repositorio \url{https://github.com/AnderJM3/RoutTech_ISR401}.
+  \item El repositorio público contendrá únicamente instrumentos, metadatos no identificables, transcripciones anonimizadas y resultados agregados.
+  \item Los participantes se identificarán mediante códigos; sus nombres no se utilizarán en el análisis ni en la publicación.
+  \item Antes de compartir una transcripción se eliminarán nombres, teléfonos, correos, placas, domicilios y referencias indirectas que permitan reidentificación.
+  \item Mayra Cordova será responsable de la aplicación y verificación inicial de los instrumentos. Anderson Naranjo será responsable de la organización, control de versiones, custodia digital y trazabilidad documental.
+  \item Cualquier incidente de privacidad será comunicado al docente responsable y gestionado conforme al protocolo de protección de datos del proyecto.
+\end{itemize}
+
+\section{Aprobación interna de los instrumentos}
+
+Los instrumentos incluidos en este anexo se consideran consolidados en su versión indicada y quedan sujetos a revisión ética y firma. Cualquier cambio sustantivo en preguntas, población, datos solicitados o modalidad de registro deberá documentarse mediante control de versiones antes de una nueva aplicación.
+
+\vspace{1.1cm}
+\noindent\begin{tabularx}{\textwidth}{Y Y}
+\centering\rule{6.1cm}{0.4pt} & \centering\arraybackslash\rule{6.1cm}{0.4pt}\\
+\centering \Mayra & \centering\arraybackslash \Anderson\\
+\centering Responsable de instrumentos y trabajo de campo & \centering\arraybackslash Líder y custodio documental\\[5pt]
+\centering Fecha: \rule{2.7cm}{0.4pt} & \centering\arraybackslash Fecha: \rule{2.7cm}{0.4pt}
+\end{tabularx}
+
+\vspace{1.15cm}
+\begin{center}
+\rule{7.0cm}{0.4pt}\\
+\Docente\\
+Docente responsable\\[5pt]
+Fecha: \rule{3.0cm}{0.4pt}
+\end{center}
+
+\end{document}
