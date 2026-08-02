@@ -7,9 +7,7 @@ Repositorio correspondiente a la Entrega 3 (2A) de la asignatura Ingeniería de 
 ## Integrantes
 
 - Cordova Carreño Mayra Lucila
-- Herrera Moran Gilmar Javier
 - Naranjo Flores Anderson Jeampiere
-- Valarezo Flores Steven Alexander
 
 ## Responsabilidades
 
@@ -18,12 +16,6 @@ Coordinación, LaTeX, GitHub, diagramas UML, trazabilidad e integración final.
 
 ### Mayra Cordova
 Entrevistas, evidencias, requisitos, validación y componente experimental.
-
-### Steven Valarezo
-Bibliografía, fundamento teórico, normativa y preparación de publicación.
-
-### Gilmar Herrera
-Mockups, diagramas de componentes y despliegue, arquitectura y MVP.
 
 ## Estructura
 
